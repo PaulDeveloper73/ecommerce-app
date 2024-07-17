@@ -1,7 +1,14 @@
+import { BrowserRouter } from "react-router-dom";
+import Header from "./components/Header";
+import AppRoute from "./components/AppRoute";
+import Footer from "./components/Footer";
 export default function App() {
+  // const AppRoute = lazy(() => import("./components/AppRoute"));
   return (
-    <div className="flex justify-center items-center min-h-screen">
-      <h1 className="text-3xl font-light ">Ecommerce App - coming soon</h1>
-    </div>
+    <BrowserRouter>
+      <Header />
+      <AppRoute />
+      <Footer />
+    </BrowserRouter>
   );
 }
