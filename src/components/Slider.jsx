@@ -12,7 +12,7 @@ const Slider = () => {
           className="object-cover object-top w-full h-full "
         />
       </div>
-      <div className="absolute right-4 sm:right-12 flex flex-col items-center justify-center top-[40%] text-balance space-y-4 ">
+      <div className="absolute right-4 sm:right-12 flex flex-col items-center justify-center top-[30%] text-balance space-y-4 ">
         <h1 className="text-3xl font-bold text-white sm:text-5xl ">
           Welcome to E-Shop
         </h1>
