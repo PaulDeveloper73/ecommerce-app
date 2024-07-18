@@ -1,14 +1,17 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 const Menu = () => {
   return (
     <nav className="flex items-center justify-between max-w-6xl px-10 mx-auto text-white">
       <div className="flex items-center justify-center space-x-20">
-        <h1 className="text-xl font-semibold">E-SHOP</h1>
+        <h1 className="text-xl font-semibold">
+          <Link to={"/"}>E-SHOP</Link>
+        </h1>
         <ul className="items-center justify-center hidden space-x-6 text-lg md:flex">
-          <li>Products</li>
-          <li>Shop</li>
-          <li>About Us</li>
+          <Link to="products">Products</Link>
+          <Link to={"/shop"}>Shop</Link>
+          <Link to={"/about-us"}>About Us</Link>
         </ul>
       </div>
       <ul className="items-center justify-center hidden space-x-6 md:flex">
