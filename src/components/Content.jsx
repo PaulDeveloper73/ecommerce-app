@@ -1,24 +1,10 @@
 import shirts from "../assets/shirts.jpg";
 import skarts from "../assets/skart.jpg";
+import MinHeader from "./MinHeader";
 const Content = () => {
   return (
     <section className="flex flex-col items-center justify-center mt-10">
-      <h1 className="text-2xl font-semibold text-indigo-900">
-        Product Categories
-      </h1>
-      <div className="flex items-center justify-center w-full p-4 mt-4 space-x-6 divide-x-2 divide-indigo-600 bg-slate-200">
-        <div className="text-md ps-6">
-          <h2 className="px-6 py-2 font-medium bg-indigo-100 shadow-md">
-            Women's Fashion
-          </h2>
-        </div>
-        <div className="text-md ps-6">
-          <h2 className="px-6 py-2 font-medium bg-indigo-100 rounded-md shadow-md">
-            Men's Fashion
-          </h2>
-        </div>
-      </div>
-
+      <MinHeader title={"Product Categories"} />
       {/* images */}
       <section className="flex flex-wrap items-center justify-center w-full max-w-5xl p-4 px-20 mt-4 space-x-6 sm:justify-between bg-slate-100">
         <div className="flex-1">

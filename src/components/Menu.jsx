@@ -17,18 +17,22 @@ const Menu = () => {
       <ul className="items-center justify-center hidden space-x-6 md:flex">
         <li>
           <div className="items-center justify-center hidden space-x-6 md:flex">
-            <button
-              type="button"
-              className="ring-1 px-6 md:px-4 py-[3px] rounded-md border border-slate-200  bg-indigo-600 hover:ring-offset-1 hover:bg-slate-200 hover:text-indigo-600"
-            >
-              Sign In
-            </button>
-            <button
-              type="button"
-              className="ring-1 px-6 md:px-4 py-[3px] rounded-md border border-slate-200 hover:ring-offset-1 hover:text-slate-200 hover:bg-indigo-600 "
-            >
-              Sign Up
-            </button>
+            <Link to={"/sign-in"}>
+              <button
+                type="button"
+                className="ring-1 px-6 md:px-4 py-[3px] rounded-md border border-slate-200  bg-indigo-600 hover:ring-offset-1 hover:bg-slate-200 hover:text-indigo-600"
+              >
+                Sign In
+              </button>
+            </Link>
+            <Link to={"/sign-up"}>
+              <button
+                type="button"
+                className="ring-1 px-6 md:px-4 py-[3px] rounded-md border border-slate-200 hover:ring-offset-1 hover:text-slate-200 hover:bg-indigo-600 "
+              >
+                Sign Up
+              </button>
+            </Link>
           </div>
         </li>
         <li>
