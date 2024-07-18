@@ -1,5 +1,4 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import slider from "../assets/e-shop-slide.jpg";
 import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
 const Menu = () => {
   return (
