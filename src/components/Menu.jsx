@@ -1,19 +1,20 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import slider from "../assets/e-shop-slide.jpg";
 import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
 const Menu = () => {
   return (
-    <nav className="flex justify-between text-white items-center mx-auto max-w-6xl px-10">
-      <div className="flex justify-center items-center space-x-20">
-        <h1 className="font-semibold text-xl">E-SHOP</h1>
-        <ul className="md:flex hidden  justify-center text-lg items-center space-x-6">
+    <nav className="flex items-center justify-between max-w-6xl px-10 mx-auto text-white">
+      <div className="flex items-center justify-center space-x-20">
+        <h1 className="text-xl font-semibold">E-SHOP</h1>
+        <ul className="items-center justify-center hidden space-x-6 text-lg md:flex">
           <li>Products</li>
           <li>Shop</li>
           <li>About Us</li>
         </ul>
       </div>
-      <ul className="hidden md:flex justify-center items-center space-x-6">
+      <ul className="items-center justify-center hidden space-x-6 md:flex">
         <li>
-          <div className="hidden md:flex justify-center items-center space-x-6">
+          <div className="items-center justify-center hidden space-x-6 md:flex">
             <button
               type="button"
               className="ring-1 px-6 md:px-4 py-[3px] rounded-md border border-slate-200  bg-indigo-600 hover:ring-offset-1 hover:bg-slate-200 hover:text-indigo-600"
@@ -32,7 +33,7 @@ const Menu = () => {
           <FontAwesomeIcon icon={faSearch} className="cursor-pointer" />
         </li>
       </ul>
-      <span className="md:hidden flex justify-center items-center">
+      <span className="flex items-center justify-center md:hidden">
         <FontAwesomeIcon icon={faBars} />
       </span>
     </nav>
