@@ -1,26 +1,36 @@
 import { useEffect, useState } from "react";
 import MinHeader from "../components/MinHeader";
 import ProductCard from "../components/ProductCard";
-import { BASE_URL } from "../components/Utilities";
+import { fetchProducts, allowed_Categories } from "../components/Utilities";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
-  const fetchProducts = async () => {
-    try {
-      const response = await fetch(BASE_URL);
-      const data = await response.json();
-      setProducts(data);
-    } catch (error) {
-      console.error("Error fetching the products:", error);
+  const [allProducts, setAllProducts] = useState([]);
+  const handleActiveCategory = (category) => {
+    if (category === "all") setProducts(allProducts);
+    else {
+      setProducts(
+        allProducts.filter((product) => product.category === category)
+      );
     }
   };
 
   useEffect(() => {
-    fetchProducts();
+    const getProducts = async () => {
+      const data = await fetchProducts();
+      setProducts(data);
+      setAllProducts(data);
+    };
+    getProducts();
   }, []);
+
   return (
     <div className="flex flex-col items-start justify-center min-h-screen mt-20">
-      <MinHeader title={"All Products"} />
+      <MinHeader
+        title={"All Products"}
+        handleCategory={handleActiveCategory}
+        category={allowed_Categories}
+      />
 
       <section className="flex flex-wrap gap-x-0 gap-y-10 items-center justify-center w-full">
         {products.map((product) => (
