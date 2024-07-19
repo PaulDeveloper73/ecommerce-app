@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import shirts from "../assets/shirts.jpg";
 import skarts from "../assets/skart.jpg";
 import MinHeader from "./MinHeader";
@@ -15,9 +16,11 @@ const Content = () => {
               alt="shirts"
               className="object-cover object-center w-full max-h-[300px] rounded-md shadow-md"
             />
-            <button className="px-4 py-1 mt-4 font-medium text-indigo-500 rounded-md shadow-md ring-1 hover:bg-indigo-500 hover:text-white">
-              Shop Now
-            </button>
+            <Link to={"/products/mens-fashion"}>
+              <button className="px-4 py-1 mt-4 font-medium text-indigo-500 rounded-md shadow-md ring-1 hover:bg-indigo-500 hover:text-white">
+                Shop Now
+              </button>
+            </Link>
           </div>
         </div>
         <div className="flex-1">
@@ -29,9 +32,11 @@ const Content = () => {
               alt="shirts"
               className="object-cover object-center w-full rounded-md shadow-md max-h-[300px]"
             />
-            <button className="px-4 py-1 mt-4 font-medium text-indigo-500 rounded-md shadow-md ring-1 hover:bg-indigo-500 hover:text-white">
-              Shop Now
-            </button>
+            <Link to={"/products/womens-fashion"}>
+              <button className="px-4 py-1 mt-4 font-medium text-indigo-500 rounded-md shadow-md ring-1 hover:bg-indigo-500 hover:text-white">
+                Shop Now
+              </button>
+            </Link>
           </div>
         </div>
         {/* <div>

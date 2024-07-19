@@ -7,10 +7,22 @@ const AboutUs = lazy(() => import("../pages/AboutUs"));
 const Shop = lazy(() => import("../pages/Shop"));
 const SignUp = lazy(() => import("../pages/SignUp"));
 const SignIn = lazy(() => import("../pages/SignIn"));
+const MenFashion = lazy(() => import("../pages/MensFashion"));
+const WomenFashion = lazy(() => import("../pages/WomensFashion"));
 
 const AppRoute = [
   { path: "/", element: <Dashboad />, requireAuth: false },
   { path: "/products", element: <Products />, requireAuth: false },
+  {
+    path: "/products/mens-fashion",
+    element: <MenFashion />,
+    requireAuth: false,
+  },
+  {
+    path: "/products/womens-fashion",
+    element: <WomenFashion />,
+    requireAuth: false,
+  },
   { path: "/shop", element: <Shop />, requireAuth: false },
   { path: "/about-us", element: <AboutUs />, requireAuth: false },
   { path: "/sign-up", element: <SignUp />, requireAuth: false },
