@@ -1,12 +1,13 @@
 import { useEffect } from "react";
+import CategoryBanner from "../components/CategoryBanner";
 const MensFashion = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <div className="flex justify-center items-center min-h-screen">
-      MensFashion loading
-    </div>
+    <>
+      <CategoryBanner title={"Men's"} />
+    </>
   );
 };
 

@@ -16,7 +16,7 @@ const Content = () => {
               alt="shirts"
               className="object-cover object-center w-full max-h-[300px] rounded-md shadow-md"
             />
-            <Link to={"/products/mens-fashion"}>
+            <Link to={"/products/men's clothing"}>
               <button className="px-4 py-1 mt-4 font-medium text-indigo-500 rounded-md shadow-md ring-1 hover:bg-indigo-500 hover:text-white">
                 Shop Now
               </button>
@@ -32,22 +32,13 @@ const Content = () => {
               alt="shirts"
               className="object-cover object-center w-full rounded-md shadow-md max-h-[300px]"
             />
-            <Link to={"/products/womens-fashion"}>
+            <Link to={"/products/women's clothing"}>
               <button className="px-4 py-1 mt-4 font-medium text-indigo-500 rounded-md shadow-md ring-1 hover:bg-indigo-500 hover:text-white">
                 Shop Now
               </button>
             </Link>
           </div>
         </div>
-        {/* <div>
-          <p className="text-sm text-slate-400">New Arrivals</p>
-          <div>
-            <img src={skarts} alt="shirts" className="w-full h-96" />
-            <button className="px-4 py-2 mt-4 font-medium text-white bg-indigo-600 rounded-md shadow-md">
-              Shop Now
-            </button>
-          </div>
-        </div> */}
       </section>
     </section>
   );

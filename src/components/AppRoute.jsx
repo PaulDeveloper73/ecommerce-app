@@ -12,17 +12,12 @@ const WomenFashion = lazy(() => import("../pages/WomensFashion"));
 
 const AppRoute = [
   { path: "/", element: <Dashboad />, requireAuth: false },
-  { path: "/products", element: <Products />, requireAuth: false },
   {
-    path: "/products/mens-fashion",
-    element: <MenFashion />,
+    path: "/products/:productcategory?",
+    element: <Products />,
     requireAuth: false,
   },
-  {
-    path: "/products/womens-fashion",
-    element: <WomenFashion />,
-    requireAuth: false,
-  },
+
   { path: "/shop", element: <Shop />, requireAuth: false },
   { path: "/about-us", element: <AboutUs />, requireAuth: false },
   { path: "/sign-up", element: <SignUp />, requireAuth: false },

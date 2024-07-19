@@ -1,11 +1,23 @@
 import { useEffect, useState } from "react";
 import MinHeader from "../components/MinHeader";
 import ProductCard from "../components/ProductCard";
-import { fetchProducts, allowed_Categories } from "../components/Utilities";
+import {
+  fetchProducts,
+  allowed_Categories,
+  fetchCategoryProducts,
+} from "../components/Utilities";
+import { useParams } from "react-router-dom";
+import MensFashion from "./MensFashion";
+import WomensFashion from "./WomensFashion";
 
 const Products = () => {
+  const { productcategory } = useParams();
   const [products, setProducts] = useState([]);
   const [allProducts, setAllProducts] = useState([]);
+
+  const banner =
+    productcategory === "men's clothing" ? <MensFashion /> : <WomensFashion />;
+
   const handleActiveCategory = (category) => {
     if (category === "all") setProducts(allProducts);
     else {
@@ -16,21 +28,35 @@ const Products = () => {
   };
 
   useEffect(() => {
-    const getProducts = async () => {
-      const data = await fetchProducts();
-      setProducts(data);
-      setAllProducts(data);
-    };
-    getProducts();
-  }, []);
+    if (productcategory === undefined) {
+      const getProducts = async () => {
+        const data = await fetchProducts();
+        setProducts(data);
+        setAllProducts(data);
+      };
+      getProducts().catch((e) => console.error("We have an error", e));
+    } else {
+      const getCategoryProducts = async () => {
+        const data = await fetchCategoryProducts(productcategory);
+        setProducts(data);
+      };
+      getCategoryProducts().catch((e) => console.error("We have an error", e));
+    }
+
+    window.scrollTo(0, 0);
+  }, [productcategory]);
 
   return (
     <div className="flex flex-col items-start justify-center min-h-screen mt-20">
-      <MinHeader
-        title={"All Products"}
-        handleCategory={handleActiveCategory}
-        category={allowed_Categories}
-      />
+      {productcategory === undefined ? (
+        <MinHeader
+          title={"All Products"}
+          handleCategory={handleActiveCategory}
+          category={allowed_Categories}
+        />
+      ) : (
+        banner
+      )}
 
       <section className="flex flex-wrap gap-x-0 gap-y-10 items-center justify-center w-full">
         {products.map((product) => (
