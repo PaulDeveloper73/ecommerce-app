@@ -17,8 +17,6 @@ const AppRoute = [
     element: <Products />,
     requireAuth: false,
   },
-
-  { path: "/shop", element: <Shop />, requireAuth: false },
   { path: "/about-us", element: <AboutUs />, requireAuth: false },
   { path: "/sign-up", element: <SignUp />, requireAuth: false },
   { path: "/sign-in", element: <SignIn />, requireAuth: false },
