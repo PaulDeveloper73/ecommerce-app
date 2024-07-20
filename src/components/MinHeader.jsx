@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 const MinHeader = ({
   title,
 
@@ -26,7 +27,7 @@ const MinHeader = ({
               setActiveCategory("all");
             }}
           >
-            All
+            <Link to="/products">All</Link>
           </h2>
         </div>
         <div className="text-md ps-6">
@@ -40,7 +41,7 @@ const MinHeader = ({
               setActiveCategory("women");
             }}
           >
-            Women's Fashion
+            <Link to={"/products/women's clothing"}>Women's Fashion</Link>
           </h2>
         </div>
         <div className="text-md ps-6">
@@ -51,7 +52,7 @@ const MinHeader = ({
               setActiveCategory("men");
             }}
           >
-            Men's Fashion
+            <Link to={"/products/men's clothing"}>Men's Fashion</Link>
           </h2>
         </div>
       </div>

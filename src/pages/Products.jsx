@@ -28,6 +28,7 @@ const Products = () => {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     if (productcategory === undefined) {
       const getProducts = async () => {
         const data = await fetchProducts();
@@ -42,8 +43,6 @@ const Products = () => {
       };
       getCategoryProducts().catch((e) => console.error("We have an error", e));
     }
-
-    window.scrollTo(0, 0);
   }, [productcategory]);
 
   return (
