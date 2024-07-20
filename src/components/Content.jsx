@@ -2,9 +2,17 @@ import { Link } from "react-router-dom";
 import shirts from "../assets/shirts.jpg";
 import skarts from "../assets/skart.jpg";
 import MinHeader from "./MinHeader";
+import { useCreateContext } from "./ContextProvider";
+import { useEffect } from "react";
+
 const Content = () => {
+  const categoryRef = useCreateContext();
+
   return (
-    <section className="flex flex-col items-center justify-center mt-10">
+    <section
+      ref={categoryRef}
+      className="flex flex-col items-center justify-center mt-10"
+    >
       <MinHeader title={"Product Categories"} />
       {/* images */}
       <section className="flex flex-wrap items-center justify-center w-full max-w-5xl p-4 px-20 mt-4 space-x-6 sm:justify-between bg-slate-100">

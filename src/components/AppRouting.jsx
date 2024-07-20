@@ -14,7 +14,12 @@ const AppRouting = () => {
       return console.log("", route.path);
     } else {
       return (
-        <Route exact key={index} path={route.path} element={RouteElement} />
+        <Route
+          exact
+          key={index}
+          path={route.path}
+          element={<route.component categoryRef={categoryRef} />}
+        />
       );
     }
   });
@@ -27,7 +32,7 @@ const AppRouting = () => {
       <CSSTransition
         nodeRef={fadeRef} // Ref used for CSSTransition
         key={location.key}
-        timeout={300}
+        timeout={200}
         classNames="fade"
         unmountOnExit
       >

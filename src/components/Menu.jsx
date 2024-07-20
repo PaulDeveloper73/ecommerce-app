@@ -1,8 +1,17 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { useCreateContext } from "./ContextProvider";
+import { Link, useNavigate } from "react-router-dom";
 
 const Menu = () => {
+  const categoryRef = useCreateContext();
+  const navigate = useNavigate();
+  const handleScrollTocategory = () => {
+    navigate("/");
+    setTimeout(() => {
+      categoryRef.current.scrollIntoView({ behavior: "smooth" });
+    }, 300);
+  };
   return (
     <nav className="flex items-center justify-between max-w-6xl px-10 mx-auto text-white">
       <div className="flex items-center justify-center space-x-20">
@@ -13,9 +22,7 @@ const Menu = () => {
           <li>
             <Link to="products">Products</Link>
           </li>
-          <li>
-            <span>Shop</span>
-          </li>
+          <li onClick={() => handleScrollTocategory()}>Shop</li>
           <li>
             {" "}
             <Link to={"/about-us"}>About Us</Link>
