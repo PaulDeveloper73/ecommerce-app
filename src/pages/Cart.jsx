@@ -5,7 +5,7 @@ const Cart = () => {
   return (
     <>
       <section className="w-full h-4 bg-slate-200"> </section>
-      <section className="flex flex-wrap items-center justify-center gap-10 p-20">
+      <section className="flex flex-wrap items-center justify-center gap-10 p-20 group">
         <div className="lg:w-[60%] w-full rounded-lg ">
           <p className="p-4 text-center text-green-600 animate-pulse">
             Cart is updated
@@ -450,8 +450,32 @@ const Cart = () => {
               </tbody>
             </table>
           </section>
+          <section className="flex flex-wrap items-center justify-between lg:flex-nowrap">
+            <div className="flex w-full gap-x-4">
+              <input
+                type="text"
+                name="coupon"
+                id="coupon"
+                className="flex-1 px-4 py-2 rounded-md focus:ring-2 focus:outline-none border-non ring-1 ring-indigo-200"
+              />{" "}
+              <label
+                htmlFor="coupon"
+                className="px-6 py-3 text-sm bg-gray-200 rounded-md"
+              >
+                Apply Coupon
+              </label>
+            </div>
+            <div className="">
+              <button
+                type="button"
+                className="px-6 py-3 text-sm bg-gray-200 rounded-md "
+              >
+                Remove All
+              </button>
+            </div>
+          </section>
         </div>
-        <div className="w-full  p-4 mt-10 lg:w-[30%] border rounded-md shadow-md shadow-indigo-300">
+        <div className="w-full  p-4 mt-10 lg:w-[30%] border rounded-md shadow-sm shadow-indigo-300  group-has-[:hover]:bg-slate-50  group-has[:hover]:shadow-md">
           {" "}
           <p className="p-4 font-bold text-slate-700">CART TOTALS</p>
           <div className="space-y-10 divide-y-2 divide-slate-100">
