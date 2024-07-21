@@ -46,7 +46,7 @@ const Products = () => {
   }, [productcategory]);
 
   return (
-    <div className="flex flex-col items-start justify-center min-h-screen mt-20">
+    <div className="flex flex-col items-start justify-center mt-20">
       {productcategory === undefined ? (
         <MinHeader
           title={"All Products"}
@@ -57,7 +57,7 @@ const Products = () => {
         banner
       )}
 
-      <section className="flex flex-wrap gap-x-0 gap-y-10 items-center justify-center w-full">
+      <section className="flex flex-wrap items-center justify-center w-full gap-x-0 gap-y-10">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}

@@ -1,5 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faSearch,
+  faCartPlus,
+} from "@fortawesome/free-solid-svg-icons";
 import { useCreateContext } from "./ContextProvider";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -52,6 +56,14 @@ const Menu = () => {
         </li>
         <li>
           <FontAwesomeIcon icon={faSearch} className="cursor-pointer" />
+        </li>
+        <li className="relative">
+          <Link to={"/products/cart"}>
+            <span className=" absolute -top-2 -right-3 shadow-md animate-pulse text-xs bg-red-500 rounded-full size-4 ps-1 ">
+              7
+            </span>
+            <FontAwesomeIcon icon={faCartPlus} className="cursor-pointer" />
+          </Link>
         </li>
       </ul>
       <span className="flex items-center justify-center md:hidden">
