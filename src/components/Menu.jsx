@@ -59,7 +59,7 @@ const Menu = () => {
         </li>
         <li className="relative">
           <Link to={"/products/cart"}>
-            <span className="absolute text-xs bg-red-500 rounded-full shadow-md  -top-2 -right-3 animate-pulse size-4 ps-1">
+            <span className="absolute text-xs bg-red-500 rounded-full shadow-md -top-2 -right-3 animate-pulse size-4 ps-1">
               7
             </span>
             <FontAwesomeIcon icon={faCartPlus} className="cursor-pointer" />
