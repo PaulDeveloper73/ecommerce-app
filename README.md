@@ -1,6 +1,6 @@
 # E-Shop Application
 
-This application helps you to manage all your task regarding shopping online.
+This is a React application  which helps you to manage all your task regarding shopping online.
 
 ##Installation Guide
 1. Clone to local machine
