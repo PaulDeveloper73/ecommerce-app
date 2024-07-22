@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { CreateContext } from "./Context";
 import { useContext, useRef } from "react";
 export const ContextProvider = ({ children }) => {
