@@ -2,7 +2,7 @@
 
 This is a React application  which helps you to manage all your task regarding shopping online.
 
-##Installation Guide
+## Installation Guide
 1. Clone to local machine
 2. Navigate to App folder
 3. Open terminal, type: npm install
