@@ -5,7 +5,7 @@ const Cart = () => {
   return (
     <>
       <section className="w-full h-4 bg-slate-200"> </section>
-      <section className="flex flex-wrap items-center justify-center gap-10 p-20 group">
+      <section className="flex flex-wrap items-center justify-center gap-6 p-4 lg:p-20 group">
         <div className="lg:w-[60%] w-full rounded-lg ">
           <p className="p-4 text-center text-green-600 animate-pulse">
             Cart is updated
@@ -290,25 +290,25 @@ const Cart = () => {
               </tbody>
             </table>
           </section>
-          <section className="flex flex-wrap items-center justify-between lg:flex-nowrap">
-            <div className="flex w-full gap-x-4">
+          <section className="flex flex-wrap justify-between p-4 gap-y-4 gap-x-2">
+            <div className="flex items-center justify-between w-full space-x-2 sm:w-auto">
               <input
                 type="text"
                 name="coupon"
                 id="coupon"
-                className="flex-1 px-4 py-2 rounded-md focus:ring-2 focus:outline-none border-non ring-1 ring-indigo-200"
+                className="flex-1 px-4 py-1 rounded-md sm:flex-none focus:shadow-md focus:ring-2 focus:outline-none border-non ring-1 ring-indigo-200"
               />{" "}
               <label
                 htmlFor="coupon"
-                className="px-6 py-3 text-sm bg-gray-200 rounded-md"
+                className="px-4 py-2 text-sm bg-gray-200 rounded-md cursor-pointer sm:px-6 hover:bg-slate-300"
               >
                 Apply Coupon
               </label>
             </div>
-            <div className="">
+            <div className="flex-1 sm:flex-none">
               <button
                 type="button"
-                className="px-6 py-3 text-sm bg-gray-200 rounded-md "
+                className="w-full px-6 py-2 text-sm bg-gray-200 rounded-md cursor-pointer lg- hover:bg-slate-300"
               >
                 Remove All
               </button>
