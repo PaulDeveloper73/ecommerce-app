@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import shirts from "../assets/shirts.jpg";
 import skarts from "../assets/skart.jpg";
 import MinHeader from "./MinHeader";
-import { useCreateContext } from "./ContextProvider";
+import { UseCreateContext } from "./ContextProvider";
 import { useEffect } from "react";
 
 const Content = () => {
-  const categoryRef = useCreateContext();
+  const categoryRef = UseCreateContext();
 
   return (
     <section
