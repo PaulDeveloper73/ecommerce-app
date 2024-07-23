@@ -3,10 +3,9 @@ import shirts from "../assets/shirts.jpg";
 import skarts from "../assets/skart.jpg";
 import MinHeader from "./MinHeader";
 import { UseCreateContext } from "./ContextProvider";
-import { useEffect } from "react";
 
 const Content = () => {
-  const categoryRef = UseCreateContext();
+  const { categoryRef } = UseCreateContext();
 
   return (
     <section

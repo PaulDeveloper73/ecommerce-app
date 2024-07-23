@@ -3,10 +3,10 @@ import { CreateContext } from "./Context";
 import { useContext, useRef, useState } from "react";
 export const ContextProvider = ({ children }) => {
   const categoryRef = useRef(null);
-  const [cartItems, setCartItems] = useState([shoppingList]);
+  const [cartItems, setCartItems] = useState(shoppingList);
 
   return (
-    <CreateContext.Provider value={categoryRef}>
+    <CreateContext.Provider value={{ categoryRef, cartItems, setCartItems }}>
       {children}
     </CreateContext.Provider>
   );

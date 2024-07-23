@@ -1,8 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { useEffect } from "react";
+import { UseCreateContext } from "../components/ContextProvider";
 
 const Cart = () => {
+  const { cartItems } = UseCreateContext();
+  console.log(cartItems);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -49,7 +52,7 @@ const Cart = () => {
                   <td className="hidden p-4 space-x-2 sm:inline-block">
                     <span>3,000 Ugx</span>
                   </td>
-                </tr>{" "}
+                </tr>
                 <tr className="text-center border-b *:text-slate-700 *:font-light border-slate-200">
                   <td className="p-4">#</td>
                   <td className="p-4 ">
@@ -69,7 +72,7 @@ const Cart = () => {
                   <td className="hidden p-4 space-x-2 sm:inline-block">
                     <span>3,000 Ugx</span>
                   </td>
-                </tr>{" "}
+                </tr>
                 <tr className="text-center border-b *:text-slate-700 *:font-light border-slate-200">
                   <td className="p-4">#</td>
                   <td className="p-4 ">
@@ -89,7 +92,7 @@ const Cart = () => {
                   <td className="hidden p-4 space-x-2 sm:inline-block">
                     <span>3,000 Ugx</span>
                   </td>
-                </tr>{" "}
+                </tr>
                 <tr className="text-center border-b *:text-slate-700 *:font-light border-slate-200">
                   <td className="p-4">#</td>
                   <td className="p-4 ">
@@ -109,7 +112,7 @@ const Cart = () => {
                   <td className="hidden p-4 space-x-2 sm:inline-block">
                     <span>3,000 Ugx</span>
                   </td>
-                </tr>{" "}
+                </tr>
                 <tr className="text-center border-b *:text-slate-700 *:font-light border-slate-200">
                   <td className="p-4">#</td>
                   <td className="p-4 ">
@@ -129,7 +132,7 @@ const Cart = () => {
                   <td className="hidden p-4 space-x-2 sm:inline-block">
                     <span>3,000 Ugx</span>
                   </td>
-                </tr>{" "}
+                </tr>
                 <tr className="text-center border-b *:text-slate-700 *:font-light border-slate-200">
                   <td className="p-4">#</td>
                   <td className="p-4 ">
@@ -149,7 +152,7 @@ const Cart = () => {
                   <td className="hidden p-4 space-x-2 sm:inline-block">
                     <span>3,000 Ugx</span>
                   </td>
-                </tr>{" "}
+                </tr>
                 <tr className="text-center border-b *:text-slate-700 *:font-light border-slate-200">
                   <td className="p-4">#</td>
                   <td className="p-4 ">
@@ -169,7 +172,7 @@ const Cart = () => {
                   <td className="hidden p-4 space-x-2 sm:inline-block">
                     <span>3,000 Ugx</span>
                   </td>
-                </tr>{" "}
+                </tr>
                 <tr className="text-center border-b *:text-slate-700 *:font-light border-slate-200">
                   <td className="p-4">#</td>
                   <td className="p-4 ">
@@ -189,7 +192,7 @@ const Cart = () => {
                   <td className="hidden p-4 space-x-2 sm:inline-block">
                     <span>3,000 Ugx</span>
                   </td>
-                </tr>{" "}
+                </tr>
                 <tr className="text-center border-b *:text-slate-700 *:font-light border-slate-200">
                   <td className="p-4">#</td>
                   <td className="p-4 ">
@@ -209,7 +212,7 @@ const Cart = () => {
                   <td className="hidden p-4 space-x-2 sm:inline-block">
                     <span>3,000 Ugx</span>
                   </td>
-                </tr>{" "}
+                </tr>
                 <tr className="text-center border-b *:text-slate-700 *:font-light border-slate-200">
                   <td className="p-4">#</td>
                   <td className="p-4 ">
@@ -229,7 +232,7 @@ const Cart = () => {
                   <td className="hidden p-4 space-x-2 sm:inline-block">
                     <span>3,000 Ugx</span>
                   </td>
-                </tr>{" "}
+                </tr>
                 <tr className="text-center border-b *:text-slate-700 *:font-light border-slate-200">
                   <td className="p-4">#</td>
                   <td className="p-4 ">
@@ -249,7 +252,7 @@ const Cart = () => {
                   <td className="hidden p-4 space-x-2 sm:inline-block">
                     <span>3,000 Ugx</span>
                   </td>
-                </tr>{" "}
+                </tr>
                 <tr className="text-center border-b *:text-slate-700 *:font-light border-slate-200">
                   <td className="p-4">#</td>
                   <td className="p-4 ">
@@ -269,7 +272,7 @@ const Cart = () => {
                   <td className="hidden p-4 space-x-2 sm:inline-block">
                     <span>3,000 Ugx</span>
                   </td>
-                </tr>{" "}
+                </tr>
                 <tr className="text-center border-b *:text-slate-700 *:font-light border-slate-200">
                   <td className="p-4">#</td>
                   <td className="p-4 ">
@@ -289,7 +292,7 @@ const Cart = () => {
                   <td className="hidden p-4 space-x-2 sm:inline-block">
                     <span>3,000 Ugx</span>
                   </td>
-                </tr>{" "}
+                </tr>
                 {/* add product and price */}
               </tbody>
             </table>
@@ -301,7 +304,7 @@ const Cart = () => {
                 name="coupon"
                 id="coupon"
                 className="flex-1 px-4 py-1 rounded-md sm:flex-none focus:shadow-md focus:ring-2 focus:outline-none border-non ring-1 ring-indigo-200"
-              />{" "}
+              />
               <label
                 htmlFor="coupon"
                 className="px-4 py-2 text-sm bg-gray-200 rounded-md cursor-pointer sm:px-6 hover:bg-slate-300"
@@ -320,7 +323,6 @@ const Cart = () => {
           </section>
         </div>
         <div className="w-full  p-4 mt-10 lg:w-[30%] border rounded-md shadow-sm shadow-indigo-300  group-has-[:hover]:bg-slate-50  group-has[:hover]:shadow-md">
-          {" "}
           <p className="p-4 font-bold text-slate-700">CART TOTALS</p>
           <div className="space-y-10 divide-y-2 divide-slate-100">
             <p className="flex items-center justify-between pt-8 border-t">
@@ -330,7 +332,6 @@ const Cart = () => {
             <p className="flex items-center justify-between pt-8 ">
               <span className="text-sm font-semibold">Subtotal</span>
               <span className="text-xl font-bold text-slate-700">
-                {" "}
                 4,000 Ugx
               </span>
             </p>

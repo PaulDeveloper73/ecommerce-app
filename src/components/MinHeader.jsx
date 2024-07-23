@@ -2,12 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 /* eslint-disable react/prop-types */
 
-const MinHeader = ({
-  title,
-
-  handleCategory = null,
-  category = null,
-}) => {
+const MinHeader = ({ title }) => {
   const [activeCategory, setActiveCategory] = useState("all"); //all/men/women
 
   const activeClass =
@@ -25,7 +20,6 @@ const MinHeader = ({
           <h2
             className={activeCategory === "all" ? activeClassPro : activeClass}
             onClick={() => {
-              handleCategory("all");
               setActiveCategory("all");
             }}
           >
@@ -39,7 +33,6 @@ const MinHeader = ({
               activeCategory === "women" ? activeClassPro : activeClass
             }
             onClick={() => {
-              handleCategory(category.women);
               setActiveCategory("women");
             }}
           >
@@ -50,7 +43,6 @@ const MinHeader = ({
           <h2
             className={activeCategory === "men" ? activeClassPro : activeClass}
             onClick={() => {
-              handleCategory(category.men);
               setActiveCategory("men");
             }}
           >
