@@ -14,16 +14,18 @@ const Menu = () => {
   const handleScrollTocategory = (e) => {
     if (location.pathname === "/") {
       e.preventDefault();
+      alert("Data loaded!");
     } else {
       navigate("/");
-      setTimeout(() => {
-        categoryRef.current.scrollIntoView({ behavior: "smooth" });
-      }, 300);
     }
+    setTimeout(() => {
+      categoryRef.current.scrollIntoView({ behavior: "smooth" });
+    }, 300);
   };
   const handleClick = (e, path) => {
     if (location.pathname === path) {
       e.preventDefault();
+      alert("Data loaded!");
     }
   };
 
