@@ -26,7 +26,12 @@ const Menu = () => {
           <li>
             <Link to="products">Products</Link>
           </li>
-          <li onClick={() => handleScrollTocategory()}>Shop</li>
+          <li
+            onClick={() => handleScrollTocategory()}
+            className="cursor-pointer"
+          >
+            Shop
+          </li>
           <li>
             {" "}
             <Link to={"/about-us"}>About Us</Link>
