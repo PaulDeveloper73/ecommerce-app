@@ -3,11 +3,8 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import AppRoute from "./AppRoute";
 import { Suspense } from "react";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
-import { UseCreateContext } from "./ContextProvider";
 
 const AppRouting = () => {
-  const { categoryRef } = UseCreateContext();
-
   const routes = AppRoute.map((route, index) => {
     if (route.requireAuth === true) {
       return console.log("", route.path);
@@ -17,7 +14,7 @@ const AppRouting = () => {
           exact
           key={index}
           path={route.path}
-          element={<route.component categoryRef={categoryRef} />}
+          element={<route.component />}
         />
       );
     }
