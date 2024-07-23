@@ -1,10 +1,9 @@
-import { useCallback } from "react";
 import { UseCreateContext } from "./ContextProvider";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye } from "@fortawesome/free-regular-svg-icons";
 /* eslint-disable react/prop-types */
 const ProductCard = ({ product }) => {
-  const { setCartItems, cartItems } = UseCreateContext();
-  console.log(cartItems);
+  const { addToCart } = UseCreateContext();
 
   return (
     <div
@@ -20,7 +19,6 @@ const ProductCard = ({ product }) => {
       <h2 className="text-sm font-bold text-center text-slate-700 line-clamp-1 ">
         {product.title}
       </h2>
-      {/* <p className="text-gray-600 text-balance">{product.description}</p> */}
       <p className="text-sm font-bold text-center text-indigo-500">
         ${product.price}
       </p>
@@ -28,26 +26,23 @@ const ProductCard = ({ product }) => {
         <button
           type="button"
           className="px-4 py-1 mt-4 text-sm font-normal text-center text-white bg-indigo-500 rounded-full hover:bg-indigo-700"
-          onClick={() => {
-            setCartItems((initial) => {
-              return {
-                totalItems: initial.totalItems + 1,
-                totalPrice: initial.totalPrice + product.price,
-                items: [
-                  ...initial.items,
-                  {
-                    id: product.id,
-                    title: product.title,
-                    price: product.price,
-                    image: product.image,
-                    quantity: 1,
-                  },
-                ],
-              };
-            });
-          }}
+          onClick={() =>
+            addToCart({
+              id: product.id,
+              title: product.title,
+              price: product.price,
+              image: product.image,
+            })
+          }
         >
           Add to Cart
+        </button>
+        <button
+          type="button"
+          className="px-4 py-1 mt-4 text-sm font-normal text-center text-white bg-indigo-400 rounded-full hover:bg-indigo-700"
+        >
+          View Cart
+          <FontAwesomeIcon icon={faEye} className="ps-2" />
         </button>
       </div>
     </div>

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import MinHeader from "../components/MinHeader";
 import ProductCard from "../components/ProductCard";
+import { UseCreateContext } from "../components/ContextProvider";
+
 import {
   fetchProducts,
   allowed_Categories,
@@ -44,6 +46,8 @@ const Products = () => {
       getCategoryProducts().catch((e) => console.error("We have an error", e));
     }
   }, [productcategory]);
+  const { setCartItems, cartItems } = UseCreateContext();
+  console.log(cartItems);
 
   return (
     <div className="flex flex-col items-start justify-center mt-20">
