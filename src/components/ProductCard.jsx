@@ -1,5 +1,11 @@
+import { useCallback } from "react";
+import { UseCreateContext } from "./ContextProvider";
+
 /* eslint-disable react/prop-types */
 const ProductCard = ({ product }) => {
+  const { setCartItems, cartItems } = UseCreateContext();
+  console.log(cartItems);
+
   return (
     <div
       key={product.id}
@@ -22,6 +28,24 @@ const ProductCard = ({ product }) => {
         <button
           type="button"
           className="px-4 py-1 mt-4 text-sm font-normal text-center text-white bg-indigo-500 rounded-full hover:bg-indigo-700"
+          onClick={() => {
+            setCartItems((initial) => {
+              return {
+                totalItems: initial.totalItems + 1,
+                totalPrice: initial.totalPrice + product.price,
+                items: [
+                  ...initial.items,
+                  {
+                    id: product.id,
+                    title: product.title,
+                    price: product.price,
+                    image: product.image,
+                    quantity: 1,
+                  },
+                ],
+              };
+            });
+          }}
         >
           Add to Cart
         </button>
