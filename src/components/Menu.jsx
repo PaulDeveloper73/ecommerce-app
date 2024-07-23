@@ -8,7 +8,7 @@ import { UseCreateContext } from "./ContextProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Menu = () => {
-  const { categoryRef } = UseCreateContext();
+  const { categoryRef, cartItems } = UseCreateContext();
   const navigate = useNavigate();
   const location = useLocation();
   const handleScrollTocategory = (e) => {
@@ -86,7 +86,7 @@ const Menu = () => {
             onClick={(e) => handleClick(e, "/products/cart")}
           >
             <span className="absolute text-xs bg-red-500 rounded-full shadow-md -top-2 -right-3 animate-pulse size-4 ps-1">
-              7
+              {cartItems.totalItems}
             </span>
             <FontAwesomeIcon icon={faCartPlus} className="cursor-pointer" />
           </Link>
