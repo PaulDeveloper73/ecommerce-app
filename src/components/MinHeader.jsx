@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+/* eslint-disable react/prop-types */
+
 const MinHeader = ({
   title,
 
@@ -9,7 +11,7 @@ const MinHeader = ({
   const [activeCategory, setActiveCategory] = useState("all"); //all/men/women
 
   const activeClass =
-    "px-6 py-2 font-medium bg-indigo-100 rounded-md shadow-md transition-all duration-200 ease-in-out";
+    "px-6 text-center py-2 font-medium bg-indigo-100 rounded-md shadow-md transition-all duration-200 ease-in-out";
   const activeClassPro =
     " px-6 py-2 font-medium bg-indigo-200 rounded-md shadow-md transition-all duration-200 ease-in-out";
   return (

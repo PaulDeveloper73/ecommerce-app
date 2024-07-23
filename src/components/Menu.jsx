@@ -4,11 +4,11 @@ import {
   faSearch,
   faCartPlus,
 } from "@fortawesome/free-solid-svg-icons";
-import { useCreateContext } from "./ContextProvider";
+import { UseCreateContext } from "./ContextProvider";
 import { Link, useNavigate } from "react-router-dom";
 
 const Menu = () => {
-  const categoryRef = useCreateContext();
+  const categoryRef = UseCreateContext();
   const navigate = useNavigate();
   const handleScrollTocategory = () => {
     navigate("/");
