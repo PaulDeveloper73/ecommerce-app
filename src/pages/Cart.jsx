@@ -1,12 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faClose } from "@fortawesome/free-solid-svg-icons";
 import { useEffect } from "react";
 import { UseCreateContext } from "../components/ContextProvider";
 
 const Cart = () => {
-  const { cartItems, addItemQty, substractItemQty } = UseCreateContext();
-
-  console.log(cartItems);
+  const { cartItems, addItemQty, substractItemQty, removeFromCart, clearCart } =
+    UseCreateContext();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -25,7 +24,7 @@ const Cart = () => {
               <FontAwesomeIcon icon={faCheck} />
             </span>
           </p>
-          <section className="h-[350px] overflow-y-auto">
+          <section className="h-[350px] overflow-y-auto px-2">
             <table className="w-full border-collapse border-none table-fixed border-spacing-2 border-slate-200">
               <thead>
                 <tr className="text-center border-b border-slate-200">
@@ -42,10 +41,19 @@ const Cart = () => {
                   return (
                     <tr
                       key={item.id}
-                      className="text-center border-b *:text-slate-700 *:font-light border-slate-200"
+                      className="text-center even:bg-slate-100 hover:bg-indigo-50  hover: cursor-pointer hover:border-b hover:border-indigo-200 odd:bg-salte-50 border-b *:text-slate-700 *:font-light border-slate-200"
                     >
-                      <td className="p-4">
+                      <td className="relative">
                         <img src={item.image} alt="" className="w-10 h-10" />
+                        <span
+                          className="absolute cursor-pointer -left-2 -top-1"
+                          onClick={() => removeFromCart(item.id)}
+                        >
+                          <FontAwesomeIcon
+                            icon={faClose}
+                            className="text-red-400 hover:p-[2px] rounded-md hover:bg-red-400 hover:text-slate-100 size-3"
+                          />
+                        </span>
                       </td>
                       <td className="p-4 ">
                         <p className="line-clamp-1">{item.title}</p>
@@ -53,14 +61,14 @@ const Cart = () => {
                       <td className="p-4">
                         <div>
                           <button
-                            className="px-2 border rounded-md border-slate-300"
+                            className="px-2 border rounded-md hover:bg-indigo-400 hover:text-slate-100 border-slate-300"
                             onClick={() => substractItemQty(item.id)}
                           >
                             -
                           </button>
                           <span className="px-2">{item.quantity}</span>
                           <button
-                            className="px-2 border rounded-md border-slate-300"
+                            className="px-2 border rounded-md hover:bg-indigo-400 hover:text-slate-100 border-slate-300"
                             onClick={() => addItemQty(item.id)}
                           >
                             +
@@ -99,6 +107,7 @@ const Cart = () => {
               <button
                 type="button"
                 className="w-full px-6 py-2 text-sm bg-gray-200 rounded-md cursor-pointer lg- hover:bg-slate-300"
+                onClick={() => clearCart()}
               >
                 Remove All
               </button>

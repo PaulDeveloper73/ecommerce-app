@@ -1,6 +1,7 @@
 import { UseCreateContext } from "./ContextProvider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-regular-svg-icons";
+import { Link } from "react-router-dom";
 /* eslint-disable react/prop-types */
 const ProductCard = ({ product }) => {
   const { addToCart } = UseCreateContext();
@@ -37,13 +38,15 @@ const ProductCard = ({ product }) => {
         >
           Add to Cart
         </button>
-        <button
-          type="button"
-          className="px-4 py-1 mt-4 text-sm font-normal text-center text-white bg-indigo-400 rounded-full hover:bg-indigo-700"
-        >
-          View Cart
-          <FontAwesomeIcon icon={faEye} className="ps-2" />
-        </button>
+        <Link to={`/products/cart`}>
+          <button
+            type="button"
+            className="px-4 py-1 mt-4 text-sm font-normal text-center text-white bg-indigo-400 rounded-full hover:bg-indigo-700"
+          >
+            View Cart
+            <FontAwesomeIcon icon={faEye} className="ps-2" />
+          </button>
+        </Link>
       </div>
     </div>
   );
