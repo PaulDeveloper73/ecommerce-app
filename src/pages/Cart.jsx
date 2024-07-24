@@ -37,52 +37,64 @@ const Cart = () => {
                 </tr>
               </thead>
               <tbody>
-                {cartItems.items.map((item) => {
-                  return (
-                    <tr
-                      key={item.id}
-                      className="text-center even:bg-slate-100 hover:bg-indigo-50  hover: cursor-pointer hover:border-b hover:border-indigo-200 odd:bg-salte-50 border-b *:text-slate-700 *:font-light border-slate-200"
-                    >
-                      <td className="relative">
-                        <img src={item.image} alt="" className="w-10 h-10" />
-                        <span
-                          className="absolute cursor-pointer -left-2 -top-1"
-                          onClick={() => removeFromCart(item.id)}
-                        >
-                          <FontAwesomeIcon
-                            icon={faClose}
-                            className="text-red-400 hover:p-[2px] rounded-md hover:bg-red-400 hover:text-slate-100 size-3"
+                {cartItems.items.length > 0 ? (
+                  cartItems.items.map((item) => {
+                    return (
+                      <tr
+                        key={item.id}
+                        className="text-center even:bg-slate-100 hover:bg-indigo-50  hover: cursor-pointer hover:border-b hover:border-indigo-200 odd:bg-salte-50 border-b *:text-slate-700 *:font-light border-slate-200"
+                      >
+                        <td className="relative ">
+                          <img
+                            src={item.image}
+                            alt=""
+                            className="w-10 h-10 mx-auto"
                           />
-                        </span>
-                      </td>
-                      <td className="p-4 ">
-                        <p className="line-clamp-1">{item.title}</p>
-                      </td>
-                      <td className="p-4">
-                        <div>
-                          <button
-                            className="px-2 border rounded-md hover:bg-indigo-400 hover:text-slate-100 border-slate-300"
-                            onClick={() => substractItemQty(item.id)}
+                          <span
+                            className="absolute cursor-pointer left-14 -top-1"
+                            onClick={() => removeFromCart(item.id)}
                           >
-                            -
-                          </button>
-                          <span className="px-2">{item.quantity}</span>
-                          <button
-                            className="px-2 border rounded-md hover:bg-indigo-400 hover:text-slate-100 border-slate-300"
-                            onClick={() => addItemQty(item.id)}
-                          >
-                            +
-                          </button>
-                        </div>
-                      </td>
-                      <td className="hidden p-4 space-x-2 sm:inline-block">
-                        <span>
-                          $ {(item.price * item.quantity).toFixed(2)}{" "}
-                        </span>
-                      </td>
-                    </tr>
-                  );
-                })}
+                            <FontAwesomeIcon
+                              icon={faClose}
+                              className="text-red-400 hover:p-[2px] rounded-md hover:bg-red-400 hover:text-slate-100 size-3"
+                            />
+                          </span>
+                        </td>
+                        <td className="p-4 ">
+                          <p className="line-clamp-1">{item.title}</p>
+                        </td>
+                        <td className="p-4">
+                          <div>
+                            <button
+                              className="px-2 border rounded-md hover:bg-indigo-400 hover:text-slate-100 border-slate-300"
+                              onClick={() => substractItemQty(item.id)}
+                            >
+                              -
+                            </button>
+                            <span className="px-2">{item.quantity}</span>
+                            <button
+                              className="px-2 border rounded-md hover:bg-indigo-400 hover:text-slate-100 border-slate-300"
+                              onClick={() => addItemQty(item.id)}
+                            >
+                              +
+                            </button>
+                          </div>
+                        </td>
+                        <td className="hidden p-4 space-x-2 sm:inline-block">
+                          <span>
+                            $ {(item.price * item.quantity).toFixed(2)}{" "}
+                          </span>
+                        </td>
+                      </tr>
+                    );
+                  })
+                ) : (
+                  <tr>
+                    <td className="p-4 text-center " colSpan={4}>
+                      No items in cart
+                    </td>
+                  </tr>
+                )}
 
                 {/* add product and price */}
               </tbody>
