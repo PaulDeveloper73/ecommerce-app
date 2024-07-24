@@ -25,7 +25,7 @@ const Cart = () => {
             </span>
           </p>
           <section className="h-[350px] overflow-y-auto px-2">
-            <table className="w-full border-collapse border-none table-fixed border-spacing-2 border-slate-200">
+            <table className="table w-full border-collapse border-none table-auto lg:table-fixed border-spacing-2 border-slate-200">
               <thead>
                 <tr className="text-center border-b border-slate-200">
                   <th className="p-4 font-light text-slate-400">#</th>
@@ -66,14 +66,14 @@ const Cart = () => {
                         <td className="p-4">
                           <div>
                             <button
-                              className="px-2 border rounded-md hover:bg-indigo-400 hover:text-slate-100 border-slate-300"
+                              className="border rounded-md lg:px-2 hover:bg-indigo-400 hover:text-slate-100 border-slate-300"
                               onClick={() => substractItemQty(item.id)}
                             >
                               -
                             </button>
                             <span className="px-2">{item.quantity}</span>
                             <button
-                              className="px-2 border rounded-md hover:bg-indigo-400 hover:text-slate-100 border-slate-300"
+                              className="border rounded-md lg:px-2 hover:bg-indigo-400 hover:text-slate-100 border-slate-300"
                               onClick={() => addItemQty(item.id)}
                             >
                               +
