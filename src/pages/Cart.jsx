@@ -4,11 +4,16 @@ import { useEffect } from "react";
 import { UseCreateContext } from "../components/ContextProvider";
 
 const Cart = () => {
-  const { cartItems } = UseCreateContext();
+  const { cartItems, addItemQty, substractItemQty } = UseCreateContext();
+
   console.log(cartItems);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  if (!Array.isArray(cartItems.items)) {
+    console.error("cartItems.items is not an array", cartItems.items);
+    return null; // or you can render a message indicating the issue
+  }
   return (
     <>
       <section className="w-full h-4 bg-slate-200"> </section>
@@ -33,266 +38,44 @@ const Cart = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr className="text-center border-b *:text-slate-700 *:font-light border-slate-200">
-                  <td className="p-4">#</td>
-                  <td className="p-4 ">
-                    <p className="line-clamp-1">Min Jacket XL</p>
-                  </td>
-                  <td className="p-4">
-                    <div>
-                      <button className="px-2 border rounded-md border-slate-300">
-                        -
-                      </button>
-                      <span className="px-2">1</span>
-                      <button className="px-2 border rounded-md border-slate-300">
-                        +
-                      </button>
-                    </div>
-                  </td>
-                  <td className="hidden p-4 space-x-2 sm:inline-block">
-                    <span>3,000 Ugx</span>
-                  </td>
-                </tr>
-                <tr className="text-center border-b *:text-slate-700 *:font-light border-slate-200">
-                  <td className="p-4">#</td>
-                  <td className="p-4 ">
-                    <p className="line-clamp-1">Min Jacket XL</p>
-                  </td>
-                  <td className="p-4">
-                    <div>
-                      <button className="px-2 border rounded-md border-slate-300">
-                        -
-                      </button>
-                      <span className="px-2">1</span>
-                      <button className="px-2 border rounded-md border-slate-300">
-                        +
-                      </button>
-                    </div>
-                  </td>
-                  <td className="hidden p-4 space-x-2 sm:inline-block">
-                    <span>3,000 Ugx</span>
-                  </td>
-                </tr>
-                <tr className="text-center border-b *:text-slate-700 *:font-light border-slate-200">
-                  <td className="p-4">#</td>
-                  <td className="p-4 ">
-                    <p className="line-clamp-1">Min Jacket XL</p>
-                  </td>
-                  <td className="p-4">
-                    <div>
-                      <button className="px-2 border rounded-md border-slate-300">
-                        -
-                      </button>
-                      <span className="px-2">1</span>
-                      <button className="px-2 border rounded-md border-slate-300">
-                        +
-                      </button>
-                    </div>
-                  </td>
-                  <td className="hidden p-4 space-x-2 sm:inline-block">
-                    <span>3,000 Ugx</span>
-                  </td>
-                </tr>
-                <tr className="text-center border-b *:text-slate-700 *:font-light border-slate-200">
-                  <td className="p-4">#</td>
-                  <td className="p-4 ">
-                    <p className="line-clamp-1">Min Jacket XL</p>
-                  </td>
-                  <td className="p-4">
-                    <div>
-                      <button className="px-2 border rounded-md border-slate-300">
-                        -
-                      </button>
-                      <span className="px-2">1</span>
-                      <button className="px-2 border rounded-md border-slate-300">
-                        +
-                      </button>
-                    </div>
-                  </td>
-                  <td className="hidden p-4 space-x-2 sm:inline-block">
-                    <span>3,000 Ugx</span>
-                  </td>
-                </tr>
-                <tr className="text-center border-b *:text-slate-700 *:font-light border-slate-200">
-                  <td className="p-4">#</td>
-                  <td className="p-4 ">
-                    <p className="line-clamp-1">Min Jacket XL</p>
-                  </td>
-                  <td className="p-4">
-                    <div>
-                      <button className="px-2 border rounded-md border-slate-300">
-                        -
-                      </button>
-                      <span className="px-2">1</span>
-                      <button className="px-2 border rounded-md border-slate-300">
-                        +
-                      </button>
-                    </div>
-                  </td>
-                  <td className="hidden p-4 space-x-2 sm:inline-block">
-                    <span>3,000 Ugx</span>
-                  </td>
-                </tr>
-                <tr className="text-center border-b *:text-slate-700 *:font-light border-slate-200">
-                  <td className="p-4">#</td>
-                  <td className="p-4 ">
-                    <p className="line-clamp-1">Min Jacket XL</p>
-                  </td>
-                  <td className="p-4">
-                    <div>
-                      <button className="px-2 border rounded-md border-slate-300">
-                        -
-                      </button>
-                      <span className="px-2">1</span>
-                      <button className="px-2 border rounded-md border-slate-300">
-                        +
-                      </button>
-                    </div>
-                  </td>
-                  <td className="hidden p-4 space-x-2 sm:inline-block">
-                    <span>3,000 Ugx</span>
-                  </td>
-                </tr>
-                <tr className="text-center border-b *:text-slate-700 *:font-light border-slate-200">
-                  <td className="p-4">#</td>
-                  <td className="p-4 ">
-                    <p className="line-clamp-1">Min Jacket XL</p>
-                  </td>
-                  <td className="p-4">
-                    <div>
-                      <button className="px-2 border rounded-md border-slate-300">
-                        -
-                      </button>
-                      <span className="px-2">1</span>
-                      <button className="px-2 border rounded-md border-slate-300">
-                        +
-                      </button>
-                    </div>
-                  </td>
-                  <td className="hidden p-4 space-x-2 sm:inline-block">
-                    <span>3,000 Ugx</span>
-                  </td>
-                </tr>
-                <tr className="text-center border-b *:text-slate-700 *:font-light border-slate-200">
-                  <td className="p-4">#</td>
-                  <td className="p-4 ">
-                    <p className="line-clamp-1">Min Jacket XL</p>
-                  </td>
-                  <td className="p-4">
-                    <div>
-                      <button className="px-2 border rounded-md border-slate-300">
-                        -
-                      </button>
-                      <span className="px-2">1</span>
-                      <button className="px-2 border rounded-md border-slate-300">
-                        +
-                      </button>
-                    </div>
-                  </td>
-                  <td className="hidden p-4 space-x-2 sm:inline-block">
-                    <span>3,000 Ugx</span>
-                  </td>
-                </tr>
-                <tr className="text-center border-b *:text-slate-700 *:font-light border-slate-200">
-                  <td className="p-4">#</td>
-                  <td className="p-4 ">
-                    <p className="line-clamp-1">Min Jacket XL</p>
-                  </td>
-                  <td className="p-4">
-                    <div>
-                      <button className="px-2 border rounded-md border-slate-300">
-                        -
-                      </button>
-                      <span className="px-2">1</span>
-                      <button className="px-2 border rounded-md border-slate-300">
-                        +
-                      </button>
-                    </div>
-                  </td>
-                  <td className="hidden p-4 space-x-2 sm:inline-block">
-                    <span>3,000 Ugx</span>
-                  </td>
-                </tr>
-                <tr className="text-center border-b *:text-slate-700 *:font-light border-slate-200">
-                  <td className="p-4">#</td>
-                  <td className="p-4 ">
-                    <p className="line-clamp-1">Min Jacket XL</p>
-                  </td>
-                  <td className="p-4">
-                    <div>
-                      <button className="px-2 border rounded-md border-slate-300">
-                        -
-                      </button>
-                      <span className="px-2">1</span>
-                      <button className="px-2 border rounded-md border-slate-300">
-                        +
-                      </button>
-                    </div>
-                  </td>
-                  <td className="hidden p-4 space-x-2 sm:inline-block">
-                    <span>3,000 Ugx</span>
-                  </td>
-                </tr>
-                <tr className="text-center border-b *:text-slate-700 *:font-light border-slate-200">
-                  <td className="p-4">#</td>
-                  <td className="p-4 ">
-                    <p className="line-clamp-1">Min Jacket XL</p>
-                  </td>
-                  <td className="p-4">
-                    <div>
-                      <button className="px-2 border rounded-md border-slate-300">
-                        -
-                      </button>
-                      <span className="px-2">1</span>
-                      <button className="px-2 border rounded-md border-slate-300">
-                        +
-                      </button>
-                    </div>
-                  </td>
-                  <td className="hidden p-4 space-x-2 sm:inline-block">
-                    <span>3,000 Ugx</span>
-                  </td>
-                </tr>
-                <tr className="text-center border-b *:text-slate-700 *:font-light border-slate-200">
-                  <td className="p-4">#</td>
-                  <td className="p-4 ">
-                    <p className="line-clamp-1">Min Jacket XL</p>
-                  </td>
-                  <td className="p-4">
-                    <div>
-                      <button className="px-2 border rounded-md border-slate-300">
-                        -
-                      </button>
-                      <span className="px-2">1</span>
-                      <button className="px-2 border rounded-md border-slate-300">
-                        +
-                      </button>
-                    </div>
-                  </td>
-                  <td className="hidden p-4 space-x-2 sm:inline-block">
-                    <span>3,000 Ugx</span>
-                  </td>
-                </tr>
-                <tr className="text-center border-b *:text-slate-700 *:font-light border-slate-200">
-                  <td className="p-4">#</td>
-                  <td className="p-4 ">
-                    <p className="line-clamp-1">Min Jacket XL</p>
-                  </td>
-                  <td className="p-4">
-                    <div>
-                      <button className="px-2 border rounded-md border-slate-300">
-                        -
-                      </button>
-                      <span className="px-2">1</span>
-                      <button className="px-2 border rounded-md border-slate-300">
-                        +
-                      </button>
-                    </div>
-                  </td>
-                  <td className="hidden p-4 space-x-2 sm:inline-block">
-                    <span>3,000 Ugx</span>
-                  </td>
-                </tr>
+                {cartItems.items.map((item) => {
+                  return (
+                    <tr
+                      key={item.id}
+                      className="text-center border-b *:text-slate-700 *:font-light border-slate-200"
+                    >
+                      <td className="p-4">
+                        <img src={item.image} alt="" className="w-10 h-10" />
+                      </td>
+                      <td className="p-4 ">
+                        <p className="line-clamp-1">{item.title}</p>
+                      </td>
+                      <td className="p-4">
+                        <div>
+                          <button
+                            className="px-2 border rounded-md border-slate-300"
+                            onClick={() => substractItemQty(item.id)}
+                          >
+                            -
+                          </button>
+                          <span className="px-2">{item.quantity}</span>
+                          <button
+                            className="px-2 border rounded-md border-slate-300"
+                            onClick={() => addItemQty(item.id)}
+                          >
+                            +
+                          </button>
+                        </div>
+                      </td>
+                      <td className="hidden p-4 space-x-2 sm:inline-block">
+                        <span>
+                          $ {(item.price * item.quantity).toFixed(2)}{" "}
+                        </span>
+                      </td>
+                    </tr>
+                  );
+                })}
+
                 {/* add product and price */}
               </tbody>
             </table>
@@ -327,12 +110,14 @@ const Cart = () => {
           <div className="space-y-10 divide-y-2 divide-slate-100">
             <p className="flex items-center justify-between pt-8 border-t">
               <span className="text-sm font-extralight">Total</span>
-              <span className="font-light">4,000 Ugx</span>
+              <span className="font-light">
+                $ {cartItems.totalPrice.toFixed(2)}
+              </span>
             </p>
             <p className="flex items-center justify-between pt-8 ">
               <span className="text-sm font-semibold">Subtotal</span>
               <span className="text-xl font-bold text-slate-700">
-                4,000 Ugx
+                $ {cartItems.totalPrice.toFixed(2)}
               </span>
             </p>
             <div className="border"></div>

@@ -41,6 +41,34 @@ export const ContextProvider = ({ children }) => {
             state.totalPrice - itemToRemove.price * itemToRemove.quantity,
           items: state.items.filter((item) => item.id !== action.payload),
         };
+      case "ADD_ITEM_QTY":
+        itemToRemove = state.items.find((item) => item.id === action.payload);
+        if (!itemToRemove) return state;
+
+        return {
+          ...state,
+          totalItems: state.totalItems + 1,
+          totalPrice: state.totalPrice + itemToRemove.price,
+          items: state.items.map((item) =>
+            item.id === action.payload
+              ? { ...item, quantity: item.quantity + 1 }
+              : item
+          ),
+        };
+      case "SUB_ITEM_QTY":
+        itemToRemove = state.items.find((item) => item.id === action.payload);
+        if (!itemToRemove) return state;
+
+        return {
+          ...state,
+          totalItems: state.totalItems - 1,
+          totalPrice: state.totalPrice - itemToRemove.price,
+          items: state.items.map((item) =>
+            item.id === action.payload
+              ? { ...item, quantity: item.quantity - 1 }
+              : item
+          ),
+        };
 
       case "CLEAR_CART":
         return initialState;
@@ -61,50 +89,6 @@ export const ContextProvider = ({ children }) => {
     }
   };
 
-  // const cartReducer = (state, action) => {
-  //   switch (action.type) {
-  //     case "ADD_TO_CART":
-  //       const existingItem = state.items.find(
-  //         (item) => item.id === action.payload.id
-  //       );
-  //       let updatedItem;
-  //       if (existingItem) {
-  //         updatedItem = {
-  //           ...existingItem,
-  //           quantity: existingItem.quantity + 1,
-  //         };
-  //       } else {
-  //         updatedItem = { ...action.payload, quantity: 1 };
-  //       }
-  //       return {
-  //         ...state,
-  //         totalItems: state.totalItems + 1,
-  //         totalPrice: state.totalPrice + action.payload.price,
-  //         items: [...state.items, updatedItem],
-  //       };
-  //     case "REMOVE_FROM_CART":
-  //       return {
-  //         ...state,
-  //         totalItems: state.totalItems - 1,
-  //         totalPrice:
-  //           state.totalPrice - action.payload.price * action.payload.quantity,
-  //         items: state.items.filter((item) => item.id !== action.payload.id),
-  //       };
-  //     case "INITIAL_CART":
-  //       return action.payload;
-  //     case "CLEAR_CART":
-  //       return initialState;
-  //     case "GET_ITEM":
-  //       return {
-  //         ...state,
-  //         selectedItem: state.items.find(
-  //           (item) => item.id === action.payload.id
-  //         ),
-  //       };
-  //     default:
-  //       throw new Error(`Unhandled action type: ${action.type}`);
-  //   }
-  // };
   const [cartItems, dispatch] = useReducer(
     cartReducer,
     initialState,
@@ -122,10 +106,14 @@ export const ContextProvider = ({ children }) => {
   const removeFromCart = (itemId) =>
     dispatch({ type: "REMOVE_FROM_CART", payload: itemId });
   const clearCart = () => dispatch({ type: "CLEAR_CART" });
-  const cartNewObject = (newCart) =>
+  const cartNewList = (newCart) =>
     dispatch({ type: "INITIAL_CART", payload: newCart });
   const getItemById = (itemId) =>
     dispatch({ type: "GET_ITEM", payload: { id: itemId } });
+  const addItemQty = (itemId) =>
+    dispatch({ type: "ADD_ITEM_QTY", payload: itemId });
+  const substractItemQty = (itemId) =>
+    dispatch({ type: "SUB_ITEM_QTY", payload: itemId });
 
   return (
     <CreateContext.Provider
@@ -136,7 +124,9 @@ export const ContextProvider = ({ children }) => {
         removeFromCart,
         clearCart,
         getItemById,
-        cartNewObject,
+        cartNewList,
+        addItemQty,
+        substractItemQty,
       }}
     >
       {children}
