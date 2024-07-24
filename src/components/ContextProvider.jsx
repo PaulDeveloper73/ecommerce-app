@@ -3,8 +3,9 @@ import { CreateContext } from "./Context";
 import { useContext, useRef, useEffect, useReducer } from "react";
 export const ContextProvider = ({ children }) => {
   const categoryRef = useRef(null);
-  let updatedItems;
-  let existingItem, itemToRemove;
+  let existingItem,
+    updatedItems,
+    itemToRemove = null;
   const cartReducer = (state, action) => {
     switch (action.type) {
       case "ADD_TO_CART":
