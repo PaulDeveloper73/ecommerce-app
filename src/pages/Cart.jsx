@@ -66,14 +66,14 @@ const Cart = () => {
                         <td className="p-4">
                           <div>
                             <button
-                              className="px-1 border rounded-md lg:px-2 hover:bg-indigo-400 hover:text-slate-100 border-slate-300"
+                              className="px-2 border rounded-md  hover:bg-indigo-400 hover:text-slate-100 border-slate-300"
                               onClick={() => substractItemQty(item.id)}
                             >
                               -
                             </button>
                             <span className="px-2">{item.quantity}</span>
                             <button
-                              className="px-1 border rounded-md lg:px-2 hover:bg-indigo-400 hover:text-slate-100 border-slate-300"
+                              className="px-2 border rounded-md  hover:bg-indigo-400 hover:text-slate-100 border-slate-300"
                               onClick={() => addItemQty(item.id)}
                             >
                               +
