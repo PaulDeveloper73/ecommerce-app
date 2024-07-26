@@ -13,8 +13,8 @@ const Menu = () => {
   const location = useLocation();
   const handleScrollTocategory = (e) => {
     if (location.pathname === "/") {
-      e.preventDefault();
-      alert("Data loaded!");
+      // e.preventDefault();
+      // alert("Data loaded!");
     } else {
       navigate("/");
     }
@@ -24,8 +24,8 @@ const Menu = () => {
   };
   const handleClick = (e, path) => {
     if (location.pathname === path) {
-      e.preventDefault();
-      alert("Data loaded!");
+      // e.preventDefault();
+      // alert("Data loaded!");
     }
   };
 
