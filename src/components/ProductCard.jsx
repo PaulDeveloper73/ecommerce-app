@@ -10,7 +10,7 @@ const ProductCard = ({ product }) => {
   return (
     <div
       key={product.id}
-      className="bg-white p-4  group hover:border cursor-pointer hover:border-indigo-500 hover:border-opacity-60 rounded-lg shadow-md m-4 w-[200px] h-[340px] shadow-indigo-200 "
+      className="bg-white p-2  group hover:border cursor-pointer hover:border-indigo-500 hover:border-opacity-60 rounded-lg shadow-md  w-[200px] h-[340px] shadow-indigo-200 "
     >
       <img
         src={product.image}

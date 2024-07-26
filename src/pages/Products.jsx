@@ -62,7 +62,7 @@ const Products = () => {
         banner
       )}
 
-      <section className="flex flex-wrap items-center justify-center w-full gap-x-0 gap-y-10">
+      <section className="grid w-full grid-cols-2 place-content-around sm:justify-center sm:items-center sm:flex-wrap sm:flex gap-x-2 gap-y-10">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
