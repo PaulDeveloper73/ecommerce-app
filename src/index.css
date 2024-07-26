@@ -1,9 +1,13 @@
+@import './fonts/fonts.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  @apply bg-white;
+  @apply bg-white font-roboto;
+ 
+  
 }
 
 .fade-enter {

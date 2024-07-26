@@ -5,11 +5,12 @@ import { Link } from "react-router-dom";
 /* eslint-disable react/prop-types */
 const ProductCard = ({ product }) => {
   const { addToCart } = UseCreateContext();
+  const discount = product.price * 0.1;
 
   return (
     <div
       key={product.id}
-      className="bg-white p-4 hover:border cursor-pointer hover:border-indigo-500 hover:border-opacity-60 rounded-lg shadow-md m-4 w-[200px] h-[300px] shadow-indigo-200"
+      className="bg-white p-4  group hover:border cursor-pointer hover:border-indigo-500 hover:border-opacity-60 rounded-lg shadow-md m-4 w-[200px] h-[340px] shadow-indigo-200 "
     >
       <img
         src={product.image}
@@ -17,11 +18,14 @@ const ProductCard = ({ product }) => {
         title={product.title}
         className="object-cover w-full h-48 mb-4"
       />
-      <h2 className="text-sm font-bold text-center text-slate-700 line-clamp-1 ">
+      <h2 className="text-sm font-normal text-center text-slate-500 line-clamp-1 ">
         {product.title}
       </h2>
-      <p className="text-sm font-bold text-center text-indigo-500">
-        ${product.price}
+      <p className="pt-2 text-lg font-bold text-center text-indigo-500">
+        $ {(product.price - discount).toFixed(2)}
+      </p>
+      <p className="text-sm font-light text-center line-through text-slate-400">
+        $ {product.price}
       </p>
       <div className="text-center">
         <button
@@ -41,7 +45,7 @@ const ProductCard = ({ product }) => {
         <Link to={`/products/cart`}>
           <button
             type="button"
-            className="px-4 py-1 mt-4 text-sm font-normal text-center text-white bg-indigo-400 rounded-full hover:bg-indigo-700"
+            className=" hidden px-4 pt-[6px] pb-[3px] group-has-[:hover]:inline-flex mt-4 text-sm font-normal text-center ring-1 focus:outline-none focus:border-none text-indigo-700 rounded-full hover:bg-indigo-700 hover:text-slate-100"
           >
             View Cart
             <FontAwesomeIcon icon={faEye} className="ps-2" />

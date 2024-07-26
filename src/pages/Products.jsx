@@ -36,6 +36,7 @@ const Products = () => {
         const data = await fetchProducts();
         setProducts(data);
         setAllProducts(data);
+        console.log(data);
       };
       getProducts().catch((e) => console.error("We have an error", e));
     } else {
@@ -46,7 +47,7 @@ const Products = () => {
       getCategoryProducts().catch((e) => console.error("We have an error", e));
     }
   }, [productcategory]);
-  const { setCartItems, cartItems } = UseCreateContext();
+  const { cartItems } = UseCreateContext();
   console.log(cartItems);
 
   return (
