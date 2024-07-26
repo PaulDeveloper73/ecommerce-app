@@ -16,7 +16,7 @@ const ProductCard = ({ product }) => {
         src={product.image}
         alt={product.title}
         title={product.title}
-        className="object-cover w-full h-48 mb-4"
+        className="object-cover w-full h-24 mb-4 sm:h-48"
       />
       <h2 className="text-sm font-normal text-center text-slate-500 line-clamp-1 ">
         {product.title}
