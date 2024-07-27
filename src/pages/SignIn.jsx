@@ -62,12 +62,10 @@ const SignIn = () => {
           </button>
           <div className="flex items-center justify-center space-x-3 divide-x divide-indigo-300 text-sm">
             <Link to={"/recover-account"} title="Recover Account">
-              <p className="text-blue-600 text-flutter text-sm">
-                Forgot Password?
-              </p>
+              <p className="text-blue-600  text-sm">Forgot Password?</p>
             </Link>
             <Link to={"/sign-up"} title="Login" className="ps-2">
-              <p className="text-blue-600 text-flutter text-sm">Sign-Up</p>
+              <p className="text-blue-600  text-sm">Sign-Up</p>
             </Link>
           </div>
         </form>

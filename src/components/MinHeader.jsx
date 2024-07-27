@@ -29,9 +29,6 @@ const MinHeader = ({ title }) => {
         <div className="text-md ps-6">
           {}
           <h2
-            className={
-              activeCategory === "women" ? activeClassPro : activeClass
-            }
             onClick={() => {
               setActiveCategory("women");
             }}
@@ -41,7 +38,6 @@ const MinHeader = ({ title }) => {
         </div>
         <div className="text-md ps-6">
           <h2
-            className={activeCategory === "men" ? activeClassPro : activeClass}
             onClick={() => {
               setActiveCategory("men");
             }}

@@ -66,6 +66,7 @@ const Cart = () => {
                         <td className="p-4">
                           <div>
                             <button
+                              disabled={item.quantity <= 1 ? true : false}
                               className="px-2 border rounded-md  hover:bg-indigo-400 hover:text-slate-100 border-slate-300"
                               onClick={() => substractItemQty(item.id)}
                             >
