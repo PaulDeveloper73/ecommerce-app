@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 /* eslint-disable react/prop-types */
 const ProductCard = ({ product }) => {
   const { addToCart } = UseCreateContext();
-  const discount = product.price * 0.1;
+  const discount = product.price * 0.4;
 
   return (
     <div
