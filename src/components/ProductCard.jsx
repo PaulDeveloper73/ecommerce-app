@@ -12,15 +12,19 @@ const ProductCard = ({ product }) => {
       key={product.id}
       className="bg-white p-2  group hover:border cursor-pointer hover:border-indigo-500 hover:border-opacity-60 rounded-lg shadow-md w-full  sm:w-[200px] h-[340px] shadow-indigo-200 "
     >
-      <img
-        src={product.image}
-        alt={product.title}
-        title={product.title}
-        className="object-cover w-full h-48 mb-4"
-      />
-      <h2 className="text-sm font-normal text-center text-slate-500 line-clamp-1 ">
-        {product.title}
-      </h2>
+      <Link to={`/products/product-details/${product.id}`}>
+        <img
+          src={product.image}
+          alt={product.title}
+          title={product.title}
+          className="object-cover w-full h-48 mb-4"
+        />
+      </Link>
+      <Link to={`/products/product-details/${product.id}`}>
+        <h2 className="text-sm font-normal text-center text-slate-500 line-clamp-1 ">
+          {product.title}
+        </h2>
+      </Link>
       <p className="pt-2 text-lg font-bold text-center text-indigo-500">
         $ {(product.price - discount).toFixed(2)}
       </p>

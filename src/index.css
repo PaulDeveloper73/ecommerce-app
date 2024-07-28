@@ -1,17 +1,12 @@
-@import './fonts/fonts.css';
+@import "./fonts/fonts.css";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  background-image: url('bg.svg');
-  @apply bg-white font-roboto object-cover h-full w-full;
-
- 
-
-
-
+  background-image: url("../public/bg.svg");
+  @apply bg-white font-roboto object-cover  w-full h-full;
 }
 
 .fade-enter {
@@ -32,11 +27,9 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
   color: #000000;
- 
-  
 }
 
 .fade-enter {

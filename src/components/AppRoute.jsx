@@ -7,12 +7,18 @@ const Cart = lazy(() => import("../pages/Cart"));
 const AboutUs = lazy(() => import("../pages/AboutUs"));
 const SignUp = lazy(() => import("../pages/SignUp"));
 const SignIn = lazy(() => import("../pages/SignIn"));
+const ProductDetails = lazy(() => import("../pages/ProductDetails"));
 
 const AppRoute = [
   { path: "/", component: Dashboad, requireAuth: false },
   {
     path: "/products/:productcategory?",
     component: Products,
+    requireAuth: false,
+  },
+  {
+    path: "/products/product-details/:id",
+    component: ProductDetails,
     requireAuth: false,
   },
   {
