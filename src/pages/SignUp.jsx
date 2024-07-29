@@ -19,9 +19,11 @@ const SignUp = () => {
       <section className="pt-0 mt-14 md:ms-12" id="form-wrapper">
         <form
           id="loginform"
-          className="flex flex-col space-y-4 sm:w-[370px] bg-white p-8 rounded-lg py-6"
+          className="flex flex-col space-y-6 sm:w-[370px] bg-white p-8 rounded-lg py-6"
         >
-          <h3 className="text-xl text-sky-700">Create your account here!</h3>
+          <h3 className="text-xl text-sky-700 mb-8 mt-2">
+            Create your account here!
+          </h3>
           <div className="group">
             <input
               type="text"
@@ -30,7 +32,7 @@ const SignUp = () => {
               title="Full Names"
               placeholder="Enter full names"
               required
-              className="w-full p-2 border border-gray-300 rounded outline-none ring-indigo-200 focus:ring-1"
+              className="w-full text-slate-600 font-light placeholder:text-sm placeholder:font-light p-2 border border-gray-300 rounded outline-none ring-indigo-200 focus:ring-1"
             />
             <p
               id="emailmsg"
@@ -45,7 +47,7 @@ const SignUp = () => {
               title="Email Address"
               placeholder="Email Address"
               required
-              className="w-full p-2 border border-gray-300 rounded outline-none ring-indigo-200 focus:ring-1"
+              className="w-full text-slate-600 font-light  placeholder:text-sm placeholder:font-light p-2 border border-gray-300 rounded outline-none ring-indigo-200 focus:ring-1"
             />
             <p
               id="emailmsg"
@@ -61,7 +63,7 @@ const SignUp = () => {
               placeholder="Password"
               title="Password"
               required
-              className="w-full p-2 border border-gray-300 rounded outline-none ring-indigo-200 focus:ring-1"
+              className="w-full text-slate-600 font-light  placeholder:text-sm placeholder:font-light p-2 border border-gray-300 rounded outline-none ring-indigo-200 focus:ring-1"
             />
             <p
               id="passmsg"

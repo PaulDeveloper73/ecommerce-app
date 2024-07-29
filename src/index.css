@@ -5,8 +5,8 @@
 @tailwind utilities;
 
 body {
-  background-image: url("../public/bg.svg");
-  @apply bg-white font-roboto object-cover  w-full h-full;
+  background-image: url("/bg.svg");
+  @apply object-cover w-full h-full bg-white font-roboto;
 }
 
 .fade-enter {

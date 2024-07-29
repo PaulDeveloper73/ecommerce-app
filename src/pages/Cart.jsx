@@ -67,14 +67,14 @@ const Cart = () => {
                           <div>
                             <button
                               disabled={item.quantity <= 1 ? true : false}
-                              className="px-2 border rounded-md  hover:bg-indigo-400 hover:text-slate-100 border-slate-300"
+                              className="px-2 border rounded-md hover:bg-indigo-400 hover:text-slate-100 border-slate-300"
                               onClick={() => substractItemQty(item.id)}
                             >
                               -
                             </button>
                             <span className="px-2">{item.quantity}</span>
                             <button
-                              className="px-2 border rounded-md  hover:bg-indigo-400 hover:text-slate-100 border-slate-300"
+                              className="px-2 border rounded-md hover:bg-indigo-400 hover:text-slate-100 border-slate-300"
                               onClick={() => addItemQty(item.id)}
                             >
                               +
@@ -127,7 +127,7 @@ const Cart = () => {
             </div>
           </section>
         </div>
-        <div className="w-full  p-4 mt-10 lg:w-[30%] border rounded-md shadow-sm shadow-indigo-300  group-has-[:hover]:bg-slate-50  group-has[:hover]:shadow-md">
+        <div className="w-full  p-4 mt-10 lg:w-[30%] shadow-md rounded-md bg-white  bg-opacity-55">
           <p className="p-4 font-bold text-slate-700">CART TOTALS</p>
           <div className="space-y-10 divide-y-2 divide-slate-100">
             <p className="flex items-center justify-between pt-8 border-t">
