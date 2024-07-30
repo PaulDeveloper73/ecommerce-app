@@ -46,3 +46,12 @@ body {
   opacity: 0;
   transition: opacity 200ms;
 }
+ /* Custom CSS */
+ .hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, and Opera */
+}

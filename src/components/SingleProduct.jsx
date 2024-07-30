@@ -1,8 +1,11 @@
+import shirt from "../assets/shirts.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHeart,
   faStarHalf,
   faStar,
+  faArrowAltCircleLeft,
+  faArrowAltCircleRight,
 } from "@fortawesome/free-regular-svg-icons";
 import {
   faForward,
@@ -43,45 +46,71 @@ const SingleProduct = ({ product }) => {
     <>
       <section className="grid place-content-center sm:flex sm:flex-wrap  sm:justify-center sm:items-start sm:*:w-[45%] sm:space-x-[5%] mt-28 ">
         <div>
-          <div className="bg-white p-2">
+          <div className="p-2 bg-white">
             <img
               src={product.image}
               className=" w-full h-[450px] object-contain"
               alt="product"
             />
           </div>
-          <section>
-            <p className="text-center">Image Slider</p>
+          <section className="relative flex items-center justify-center gap-4 py-4 overflow-x-auto flex-nowrap snap-x snap-proximity">
+            <div className="flex space-x-4 flex-nowrap">
+              <img
+                className="w-24 snap-center"
+                src={shirt}
+                alt="Product Gallery"
+              />
+              <img
+                className="w-24 snap-center"
+                src={shirt}
+                alt="Product Gallery"
+              />
+              <img
+                className="w-24 snap-center"
+                src={shirt}
+                alt="Product Gallery"
+              />
+              <img
+                className="w-24 snap-center"
+                src={shirt}
+                alt="Product Gallery"
+              />
+              <img
+                className="w-24 snap-center"
+                src={shirt}
+                alt="Product Gallery"
+              />
+            </div>
           </section>
         </div>
 
         <div className="space-y-4">
-          <h1 className="font-medium text-4xl text-slate-600 sm:line-clamp-3 line-clamp-5">
+          <h1 className="text-4xl font-medium text-slate-600 sm:line-clamp-3 line-clamp-5">
             {product.title}
           </h1>
           <div className="space-x-4 divide-x divide-indigo-300">
             <span>
               <span>{stars}</span>
-              <span className="font-bold text-sm text-slate-600">
+              <span className="text-sm font-bold text-slate-600">
                 Customer Rating
               </span>
             </span>
-            <span className="ps-2 text-xs font-light text-slate-400">
+            <span className="text-xs font-light ps-2 text-slate-400">
               SKU:SY789001
             </span>
-            <span className="ps-2 text-xs text-green-600 hover:bg-green-300 hover:cursor-pointer bg-green-200 p-1 rounded-md">
+            <span className="p-1 text-xs text-green-600 bg-green-200 rounded-md ps-2 hover:bg-green-300 hover:cursor-pointer">
               In Stock
             </span>
           </div>
           <div className="space-x-6">
-            <span className="text-xl  font-normal text-slate-400 line-through ">
-              $ {(product.price - discount).toFixed(2)}
-            </span>
-            <span className="text-3xl font-bold text-indigo-600 ">
+            <span className="text-xl font-normal line-through text-slate-400 ">
               $ {product.price.toFixed(2)}
             </span>
+            <span className="text-3xl font-bold text-indigo-600 ">
+              $ {(product.price - discount).toFixed(2)}
+            </span>
           </div>
-          <p className="text-slate-600 text-md font-normal">
+          <p className="font-normal text-slate-600 text-md">
             We provide all the best qualities only.
           </p>
           <div className="space-x-4">
@@ -101,8 +130,8 @@ const SingleProduct = ({ product }) => {
               Add to Cart
             </button>
           </div>
-          <div className="flex justify-between items-center">
-            <span className="text-slate-600 text-sm font-light text-balance">
+          <div className="flex items-center justify-between">
+            <span className="text-sm font-light text-slate-600 text-balance">
               Did you like this product? Add to favorites now and follow the
               product.
             </span>
@@ -113,34 +142,36 @@ const SingleProduct = ({ product }) => {
               />
             </span>
           </div>
-          <div className="flex justify-start items-center space-x-6 ">
+          <div className="flex items-center justify-start space-x-6 ">
             <span>
               <img
                 src={DeveloperPic}
                 alt="user"
-                className="size-16 rounded-full"
+                className="rounded-full size-16"
               />
             </span>
             <span>
-              <p className="text-slate-500 font-light text-sm">
+              <p className="text-sm font-light text-slate-500">
                 Have a Question? Ask a Specialist
               </p>
-              <a href="tel:+256774185964">
-                <span className="font-semibold text-slate-600">
-                  (+256) 774 185 964
-                </span>
-              </a>
-              <a href="tel:+256774185964">
-                <span className="ps-2 ms-4 text-sm text-blue-600 hover:bg-blue-100 hover:cursor-pointer  p-1 rounded-md">
-                  <FontAwesomeIcon icon={faPhone} className="pe-2" />
-                  Start Live Chat
-                </span>
-              </a>
+              <span className="flex flex-wrap">
+                <a href="tel:+256774185964">
+                  <span className="font-semibold text-slate-600">
+                    (+256) 774 185 964
+                  </span>
+                </a>
+                <a href="tel:+256774185964">
+                  <span className="p-1 text-sm text-blue-600 rounded-md ps-2 ms-4 hover:bg-blue-100 hover:cursor-pointer">
+                    <FontAwesomeIcon icon={faPhone} className="pe-2" />
+                    Start Live Chat
+                  </span>
+                </a>
+              </span>
             </span>
           </div>
-          <div className=" flex flex-col sm:grid sm:gap-y-2 sm:grid-cols-2">
-            <div className="flex space-x-4 justify-start items-center">
-              <span className="border p-4 py-2 rounded-full hover:bg-slate-200 cursor-pointer">
+          <div className="flex flex-col sm:grid sm:gap-y-2 sm:grid-cols-2">
+            <div className="flex items-center justify-start space-x-4">
+              <span className="p-4 py-2 border rounded-full cursor-pointer hover:bg-slate-200">
                 <FontAwesomeIcon icon={faDollar} className="text-slate-600" />
               </span>
               <span>
@@ -150,8 +181,8 @@ const SingleProduct = ({ product }) => {
                 </p>
               </span>
             </div>
-            <div className="flex space-x-4  justify-start items-center">
-              <span className="border p-3 py-2 rounded-full hover:bg-slate-200 cursor-pointer">
+            <div className="flex items-center justify-start space-x-4">
+              <span className="p-3 py-2 border rounded-full cursor-pointer hover:bg-slate-200">
                 <FontAwesomeIcon icon={faCheck} className="text-slate-600" />
               </span>
               <span>
@@ -163,8 +194,8 @@ const SingleProduct = ({ product }) => {
                 </p>
               </span>
             </div>
-            <div className="flex space-x-4 justify-start items-center">
-              <span className="border p-3 py-2 rounded-full hover:bg-slate-200 cursor-pointer">
+            <div className="flex items-center justify-start space-x-4">
+              <span className="p-3 py-2 border rounded-full cursor-pointer hover:bg-slate-200">
                 <FontAwesomeIcon
                   icon={faHeadphones}
                   className="text-slate-600"
@@ -179,8 +210,8 @@ const SingleProduct = ({ product }) => {
                 </p>
               </span>
             </div>
-            <div className="flex space-x-4 justify-start items-center">
-              <span className="border hover:bg-slate-200 cursor-pointer p-3 py-2 rounded-full">
+            <div className="flex items-center justify-start space-x-4">
+              <span className="p-3 py-2 border rounded-full cursor-pointer hover:bg-slate-200">
                 <FontAwesomeIcon icon={faShare} className="text-slate-600" />
               </span>
               <span>
@@ -194,9 +225,9 @@ const SingleProduct = ({ product }) => {
             </div>
           </div>
           <div>
-            <span className="text-slate-400 text-sm">Categories: </span>
+            <span className="text-sm text-slate-400">Categories: </span>
             <a href="#">
-              <span className="text-slate-800 text-sm">
+              <span className="text-sm text-slate-800">
                 Men's Fashion, Wowens Fashion
               </span>
             </a>
@@ -206,7 +237,7 @@ const SingleProduct = ({ product }) => {
               <span>
                 <FontAwesomeIcon
                   icon={faFacebook}
-                  className="text-indigo-400 size-6 cursor-pointer"
+                  className="cursor-pointer text-slate-500 hover:text-indigo-500 size-4"
                 />
               </span>
             </a>
@@ -214,7 +245,7 @@ const SingleProduct = ({ product }) => {
               <span>
                 <FontAwesomeIcon
                   icon={faTwitter}
-                  className="text-indigo-400 size-6 cursor-pointer"
+                  className="cursor-pointer text-slate-500 hover:text-indigo-500 size-4"
                 />
               </span>
             </a>
@@ -222,7 +253,7 @@ const SingleProduct = ({ product }) => {
               <span>
                 <FontAwesomeIcon
                   icon={faInstagram}
-                  className="text-indigo-400 size-6 cursor-pointer"
+                  className="cursor-pointer text-slate-500 hover:text-indigo-500 size-4"
                 />
               </span>
             </a>
@@ -230,7 +261,7 @@ const SingleProduct = ({ product }) => {
               <span>
                 <FontAwesomeIcon
                   icon={faPinterest}
-                  className="text-indigo-400 size-6 cursor-pointer"
+                  className="cursor-pointer text-slate-500 hover:text-indigo-500 size-4"
                 />
               </span>
             </a>
@@ -238,7 +269,7 @@ const SingleProduct = ({ product }) => {
               <span>
                 <FontAwesomeIcon
                   icon={faLinkedin}
-                  className="text-indigo-400 size-6 cursor-pointer"
+                  className="cursor-pointer text-slate-500 hover:text-indigo-500 size-4"
                 />
               </span>
             </a>
@@ -246,7 +277,7 @@ const SingleProduct = ({ product }) => {
               <span>
                 <FontAwesomeIcon
                   icon={faWhatsapp}
-                  className="text-indigo-400 size-6 cursor-pointer"
+                  className="cursor-pointer text-slate-500 hover:text-indigo-500 size-4"
                 />
               </span>
             </a>
