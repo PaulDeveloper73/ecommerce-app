@@ -17,7 +17,7 @@ const AppRoute = [
     requireAuth: false,
   },
   {
-    path: "/products/product-details/:id",
+    path: "/products/product-details/:id?",
     component: ProductDetails,
     requireAuth: false,
   },

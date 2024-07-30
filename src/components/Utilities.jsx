@@ -9,6 +9,10 @@ export const fetchProducts = async () => {
   const response = await axios.get(`${BASE_URL}/products`);
   return response.data;
 };
+export const fetchIndividualProduct = async (id) => {
+  const response = await axios.get(`${BASE_URL}/products/${id}`);
+  return response.data;
+};
 export const fetchCategoryProducts = async (categoryName) => {
   const response = await axios.get(
     `${BASE_URL}/products/category/${categoryName}`

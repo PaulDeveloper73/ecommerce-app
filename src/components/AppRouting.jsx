@@ -1,8 +1,9 @@
 import { useRef } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import AppRoute from "./AppRoute";
-import { Suspense } from "react";
+import { Suspense, lazy } from "react";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
+import Loading from "../components/Loading";
 
 const AppRouting = () => {
   const routes = AppRoute.map((route, index) => {
@@ -33,13 +34,7 @@ const AppRouting = () => {
         unmountOnExit
       >
         <div className="fade" ref={fadeRef}>
-          <Suspense
-            fallback={
-              <div className="flex justify-center items-center mt-20">
-                Loading...
-              </div>
-            }
-          >
+          <Suspense fallback={<Loading />}>
             <Routes>{routes}</Routes>
           </Suspense>
         </div>
