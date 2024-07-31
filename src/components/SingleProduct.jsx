@@ -19,19 +19,20 @@ import { useState } from "react";
 import ProductDescription from "./product/ProductDescription";
 import ProductReviews from "./product/ProductReviews";
 import AdditionInfo from "./product/AdditionInfo";
+import { Link } from "react-router-dom";
 /* eslint-disable react/prop-types */
 const SingleProduct = ({ product }) => {
   const [isActive, setIsActive] = useState("description"); //description/reviews/moreinfo
   const stars = [];
   const discount = product.price * 0.4;
   const activeClass =
-    "px-3 py-2 text-white bg-indigo-400 cursor-pointer smpx-6 rounded-t-md text-md";
+    "px-3 py-2  bg-white border-t-2 shadow-md border-indigo-300 text-slate-800 cursor-pointer smpx-6 rounded-t-md text-md";
   const inActiveClass = "hover:bg-indigo-100 px-3 py-2 cursor-pointer text-md";
   let data;
 
   switch (isActive) {
     case "description":
-      data = <ProductDescription />;
+      data = <ProductDescription description={product.description} />;
 
       break;
     case "moreinfo":
@@ -165,11 +166,11 @@ const SingleProduct = ({ product }) => {
           <ContactPerson />
           <div>
             <span className="text-sm text-slate-400">Categories: </span>
-            <a href="#">
-              <span className="text-sm text-slate-800">
-                Men's Fashion, Wowens Fashion
+            <Link to={`/products/${product.category}`}>
+              <span className="text-sm capitalize text-slate-800">
+                {product.category}
               </span>
-            </a>
+            </Link>
           </div>
           <div className="flex space-x-2">
             <a href="#">
@@ -249,7 +250,7 @@ const SingleProduct = ({ product }) => {
         </div>
       </section>
       <div className="mt-10"></div>
-      <RelatedProducts category={"category"} />
+      <RelatedProducts category={product.category} />
     </>
   );
 };
