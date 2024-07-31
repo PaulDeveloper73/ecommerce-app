@@ -22,7 +22,7 @@ const ProductDetails = () => {
   }, [id, navigate]);
 
   return (
-    <div className="px-8">
+    <div className="px-8 ">
       {products.length > 0 ? (
         products.map((product) => (
           <SingleProduct key={product.id} product={product} />
@@ -30,11 +30,6 @@ const ProductDetails = () => {
       ) : (
         <p>No Product found</p>
       )}
-      <section>
-        <div>
-          <h3>Related Products</h3>
-        </div>
-      </section>
     </div>
   );
 };

@@ -4,14 +4,7 @@ import {
   faHeart,
   faStarHalf,
   faStar,
-  faArrowAltCircleLeft,
-  faArrowAltCircleRight,
 } from "@fortawesome/free-regular-svg-icons";
-import {
-  faForward,
-  faShare,
-  faHeadphones,
-} from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebook,
   faTwitter,
@@ -20,12 +13,39 @@ import {
   faWhatsapp,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import { faPhone, faDollar, faCheck } from "@fortawesome/free-solid-svg-icons";
-import DeveloperPic from "../assets/Kisakye-Paul-Developer.png";
+import ContactPerson from "./ContactPerson";
+import RelatedProducts from "../../RelatedProducts";
+import { useState } from "react";
+import ProductDescription from "./product/ProductDescription";
+import ProductReviews from "./product/ProductReviews";
+import AdditionInfo from "./product/AdditionInfo";
 /* eslint-disable react/prop-types */
 const SingleProduct = ({ product }) => {
+  const [isActive, setIsActive] = useState("description"); //description/reviews/moreinfo
   const stars = [];
   const discount = product.price * 0.4;
+  const activeClass =
+    "px-3 py-2 text-white bg-indigo-400 cursor-pointer smpx-6 rounded-t-md text-md";
+  const inActiveClass = "hover:bg-indigo-100 px-3 py-2 cursor-pointer text-md";
+  let data;
+
+  switch (isActive) {
+    case "description":
+      data = <ProductDescription />;
+
+      break;
+    case "moreinfo":
+      data = <AdditionInfo />;
+
+      break;
+    case "reviews":
+      data = <ProductReviews />;
+
+      break;
+
+    default:
+      break;
+  }
 
   for (let i = 0; i < 5; i++) {
     if (i === 4) {
@@ -142,88 +162,7 @@ const SingleProduct = ({ product }) => {
               />
             </span>
           </div>
-          <div className="flex items-center justify-start space-x-6 ">
-            <span>
-              <img
-                src={DeveloperPic}
-                alt="user"
-                className="rounded-full size-16"
-              />
-            </span>
-            <span>
-              <p className="text-sm font-light text-slate-500">
-                Have a Question? Ask a Specialist
-              </p>
-              <span className="flex flex-wrap">
-                <a href="tel:+256774185964">
-                  <span className="font-semibold text-slate-600">
-                    (+256) 774 185 964
-                  </span>
-                </a>
-                <a href="tel:+256774185964">
-                  <span className="p-1 text-sm text-blue-600 rounded-md ps-2 ms-4 hover:bg-blue-100 hover:cursor-pointer">
-                    <FontAwesomeIcon icon={faPhone} className="pe-2" />
-                    Start Live Chat
-                  </span>
-                </a>
-              </span>
-            </span>
-          </div>
-          <div className="flex flex-col sm:grid sm:gap-y-2 sm:grid-cols-2">
-            <div className="flex items-center justify-start space-x-4">
-              <span className="p-4 py-2 border rounded-full cursor-pointer hover:bg-slate-200">
-                <FontAwesomeIcon icon={faDollar} className="text-slate-600" />
-              </span>
-              <span>
-                <h4 className="text-xs font-bold text-slate-600">Low Prices</h4>
-                <p className="text-slate-600 text-[13px] font-light text-balance">
-                  Price match guarantee
-                </p>
-              </span>
-            </div>
-            <div className="flex items-center justify-start space-x-4">
-              <span className="p-3 py-2 border rounded-full cursor-pointer hover:bg-slate-200">
-                <FontAwesomeIcon icon={faCheck} className="text-slate-600" />
-              </span>
-              <span>
-                <h4 className="text-xs font-bold text-slate-600">
-                  Guaranteed Fitment
-                </h4>
-                <p className="text-slate-600 text-[13px] font-light text-balance">
-                  Always the quality products
-                </p>
-              </span>
-            </div>
-            <div className="flex items-center justify-start space-x-4">
-              <span className="p-3 py-2 border rounded-full cursor-pointer hover:bg-slate-200">
-                <FontAwesomeIcon
-                  icon={faHeadphones}
-                  className="text-slate-600"
-                />
-              </span>
-              <span>
-                <h4 className="text-xs font-bold text-slate-600">
-                  In-House Experts
-                </h4>
-                <p className="text-slate-600 text-[13px] font-light text-balance">
-                  We know our products
-                </p>
-              </span>
-            </div>
-            <div className="flex items-center justify-start space-x-4">
-              <span className="p-3 py-2 border rounded-full cursor-pointer hover:bg-slate-200">
-                <FontAwesomeIcon icon={faShare} className="text-slate-600" />
-              </span>
-              <span>
-                <h4 className="text-xs font-bold text-slate-600">
-                  Easy Returns
-                </h4>
-                <p className="text-slate-600 text-[13px] font-light text-balance">
-                  Quick & Hassle Free
-                </p>
-              </span>
-            </div>
-          </div>
+          <ContactPerson />
           <div>
             <span className="text-sm text-slate-400">Categories: </span>
             <a href="#">
@@ -284,13 +223,33 @@ const SingleProduct = ({ product }) => {
           </div>
         </div>
       </section>
-      <section>
-        <div className="flex space-x-10">
-          <span>Description</span>
-          <span>Additional Information</span>
-          <span>Reviews(2)</span>
+      <section className="p-4 py-16 mt-10 shadow-sm sm:p-10">
+        <div className="flex *:text-center space-x-1 border-b border-gray-200 rounded-md sm:space-x-2 ">
+          <span
+            className={isActive === "description" ? activeClass : inActiveClass}
+            onClick={() => setIsActive("description")}
+          >
+            Description
+          </span>
+          <span
+            className={isActive === "moreinfo" ? activeClass : inActiveClass}
+            onClick={() => setIsActive("moreinfo")}
+          >
+            Additional Information
+          </span>
+          <span
+            className={isActive === "reviews" ? activeClass : inActiveClass}
+            onClick={() => setIsActive("reviews")}
+          >
+            Reviews(2)
+          </span>
+        </div>
+        <div className="w-full px-4 py-10 bg-white border-b border-gray-200 sm:px-8">
+          {data}
         </div>
       </section>
+      <div className="mt-10"></div>
+      <RelatedProducts category={"category"} />
     </>
   );
 };

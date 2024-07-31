@@ -5,8 +5,8 @@
 @tailwind utilities;
 
 body {
-  background-image: url("/bg.svg");
-  @apply object-cover w-full h-full bg-white font-roboto;
+  /* background-image: url("/bg.svg"); */
+  @apply object-cover w-full h-full bg-slate-50 font-roboto;
 }
 
 .fade-enter {
@@ -46,12 +46,4 @@ body {
   opacity: 0;
   transition: opacity 200ms;
 }
- /* Custom CSS */
- .hide-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;     /* Firefox */
-}
 
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;  /* Chrome, Safari, and Opera */
-}
