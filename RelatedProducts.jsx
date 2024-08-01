@@ -14,7 +14,7 @@ const RelatedProducts = ({ category }) => {
 
   return (
     <div className="px-10">
-      <h2 className="py-2 text-xl font-medium border-b text-slate-800 text-start">
+      <h2 className="py-2 text-2xl font-medium border-b text-slate-800 text-start">
         Related Products
       </h2>
       <section className="grid w-full grid-cols-2 mt-2 place-content-start sm:justify-start sm:items-center sm:flex-wrap sm:flex gap-x-2 gap-y-20">
