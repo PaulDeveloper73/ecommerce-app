@@ -40,7 +40,7 @@ const SingleProduct = ({ product }) => {
 
       break;
     case "reviews":
-      data = <ProductReviews />;
+      data = <ProductReviews title={product.title} />;
 
       break;
 

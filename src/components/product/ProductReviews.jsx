@@ -1,9 +1,9 @@
-const ProductReviews = () => {
+const ProductReviews = ({ title }) => {
   return (
     <section className="space-y-6">
       <h4 className="p-2 text-xl font-bold text-slate-700 ">
         <span className="pe-2">{2}</span>
-        <span>{`Reviews for ${"Technaxx car"}`}</span>
+        <span>{`Reviews for ${title}`}</span>
       </h4>
       <section className="flex items-center justify-start space-x-4">
         <div>
@@ -58,6 +58,7 @@ const ProductReviews = () => {
             name="review"
             id="review"
             className="w-full h-20 p-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:border-none border-slate-300 text-slate-600 placeholder:text-sm placeholder:font-light"
+            required
             placeholder="Type the review here..."
           />
           <label htmlFor="name" className="mt-6 text-xs">
