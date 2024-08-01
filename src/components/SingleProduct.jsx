@@ -36,7 +36,7 @@ const SingleProduct = ({ product }) => {
 
       break;
     case "moreinfo":
-      data = <AdditionInfo />;
+      data = <AdditionInfo product={product} discount={discount} />;
 
       break;
     case "reviews":
@@ -63,6 +63,8 @@ const SingleProduct = ({ product }) => {
       );
     }
   }
+
+  console.log(product);
   return (
     <>
       <section className="grid place-content-center sm:flex sm:flex-wrap  sm:justify-center sm:items-start sm:*:w-[45%] sm:space-x-[5%] mt-28 ">

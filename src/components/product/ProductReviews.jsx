@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 const ProductReviews = ({ title }) => {
   return (
     <section className="space-y-6">
