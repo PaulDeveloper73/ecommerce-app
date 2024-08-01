@@ -28,7 +28,7 @@ const SingleProduct = ({ product }) => {
   const activeClass =
     "px-3 py-2  bg-white border-t-2 shadow-md border-indigo-300 text-slate-800 cursor-pointer smpx-6 rounded-t-md text-md";
   const inActiveClass = "hover:bg-indigo-100 px-3 py-2 cursor-pointer text-md";
-  let data;
+  let data = "";
 
   switch (isActive) {
     case "description":
@@ -165,7 +165,7 @@ const SingleProduct = ({ product }) => {
           </div>
           <ContactPerson />
           <div>
-            <span className="text-sm text-slate-400">Categories: </span>
+            <span className="text-xs text-slate-400">Categories: </span>
             <Link to={`/products/${product.category}`}>
               <span className="text-sm capitalize text-slate-800">
                 {product.category}
