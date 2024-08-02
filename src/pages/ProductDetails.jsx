@@ -32,7 +32,7 @@ const ProductDetails = () => {
         <div className="text-2xl text-center flex justify-center items-center h-screen">
           <FontAwesomeIcon
             icon={faSpinner}
-            className="size-16 text-blue-600 animate-spin"
+            className="size-8 text-blue-600 animate-spin"
           />
         </div>
       ) : products.length > 0 ? (
