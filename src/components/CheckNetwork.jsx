@@ -1,25 +1,27 @@
-import { useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const CheckNetwork = () => {
-  useEffect(() => {
-    const handleOnline = () => {
-      console.log("online");
-      window.location.reload();
-    };
-    const handleOffline = () => {
-      console.log("offline");
-    };
-
-    window.addEventListener("online", handleOnline);
-    window.addEventListener("offline", handleOffline);
-
-    return () => {
-      window.removeEventListener("online", handleOnline);
-      window.removeEventListener("offline", handleOffline);
-    };
-  }, []);
-
-  return <div>CheckNetwork</div>;
+import { faCheck, faWarning } from "@fortawesome/free-solid-svg-icons";
+/* eslint-disable react/prop-types */
+const CheckNetwork = ({ isOnline }) => {
+  return (
+    <>
+      {isOnline ? (
+        <div className="fixed bottom-0 w-full p-1 text-sm font-normal text-center text-white bg-green-500 shadow-md animate-bounce">
+          <span>Your back online!</span>
+          <span className="ps-4">
+            <FontAwesomeIcon icon={faCheck} />
+          </span>
+        </div>
+      ) : (
+        <div className="fixed bottom-0 w-full p-1 text-sm font-normal text-center text-white bg-red-400 shadow-md animate-bounce">
+          <span>Your offline, check your internet connnection</span>
+          <span className="ps-4">
+            <FontAwesomeIcon icon={faWarning} />
+          </span>
+        </div>
+      )}
+    </>
+  );
 };
 
 export default CheckNetwork;
