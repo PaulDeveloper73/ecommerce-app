@@ -20,9 +20,25 @@ import ProductDescription from "./product/ProductDescription";
 import ProductReviews from "./product/ProductReviews";
 import AdditionInfo from "./product/AdditionInfo";
 import { Link } from "react-router-dom";
+import { UseCreateContext } from "./ContextProvider";
+
 /* eslint-disable react/prop-types */
 const SingleProduct = ({ product }) => {
-  const [isActive, setIsActive] = useState("description"); //description/reviews/moreinfo
+  const [isActive, setIsActive] = useState("description");
+  //description/reviews/moreinfo
+  const { addToCart } = UseCreateContext();
+
+  const [qty, setQty] = useState(1);
+  const handleQtyIncrease = () => {
+    setQty(qty + 1);
+  };
+  const handleQtyDecrease = () => {
+    if (qty <= 1) {
+      setQty(1);
+    } else {
+      setQty(qty - 1);
+    }
+  };
   const stars = [];
   const discount = product.price * 0.4;
   const activeClass =
@@ -138,17 +154,32 @@ const SingleProduct = ({ product }) => {
           </p>
           <div className="space-x-4">
             <span>
-              <button className="px-2 border rounded-md hover:bg-indigo-400 hover:text-slate-100 border-slate-300">
+              <button
+                className="px-2 border rounded-md hover:bg-indigo-400 hover:text-slate-100 border-slate-300"
+                onClick={handleQtyDecrease}
+              >
                 -
               </button>
-              <span className="px-2">4</span>
-              <button className="px-2 border rounded-md hover:bg-indigo-400 hover:text-slate-100 border-slate-300">
+              <span className="px-2">{qty}</span>
+              <button
+                className="px-2 border rounded-md hover:bg-indigo-400 hover:text-slate-100 border-slate-300"
+                onClick={handleQtyIncrease}
+              >
                 +
               </button>
             </span>
             <button
               type="button"
               className="px-8 py-2 mt-4 text-sm font-normal text-center text-white bg-indigo-500 rounded-full focus:outline-none hover:ring-1 hover:ring-offset-4 hover:ring-offset-indigo-100 hover:bg-indigo-700"
+              onClick={() =>
+                addToCart({
+                  id: product.id,
+                  title: product.title,
+                  price: product.price,
+                  image: product.image,
+                  qty: qty,
+                })
+              }
             >
               Add to Cart
             </button>

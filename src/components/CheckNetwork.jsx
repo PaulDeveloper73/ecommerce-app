@@ -1,5 +1,4 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import { faCheck, faWarning } from "@fortawesome/free-solid-svg-icons";
 /* eslint-disable react/prop-types */
 const CheckNetwork = ({ isOnline }) => {

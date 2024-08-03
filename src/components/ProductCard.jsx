@@ -41,6 +41,7 @@ const ProductCard = ({ product }) => {
               title: product.title,
               price: product.price,
               image: product.image,
+              qty: 1,
             })
           }
         >
