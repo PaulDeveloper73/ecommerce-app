@@ -171,15 +171,16 @@ const SingleProduct = ({ product }) => {
             <button
               type="button"
               className="px-8 py-2 mt-4 text-sm font-normal text-center text-white bg-indigo-500 rounded-full focus:outline-none hover:ring-1 hover:ring-offset-4 hover:ring-offset-indigo-100 hover:bg-indigo-700"
-              onClick={() =>
+              onClick={() => {
                 addToCart({
                   id: product.id,
                   title: product.title,
                   price: product.price,
                   image: product.image,
-                  qty: qty,
-                })
-              }
+                  quantity: qty,
+                });
+                setQty(1);
+              }}
             >
               Add to Cart
             </button>

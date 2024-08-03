@@ -16,21 +16,21 @@ export const ContextProvider = ({ children }) => {
         if (existingItem) {
           updatedItems = state.items.map((item) =>
             item.id === action.payload.id
-              ? { ...item, quantity: item.quantity + action.payload.qty }
+              ? { ...item, quantity: item.quantity + action.payload.quantity }
               : item
           );
         } else {
           updatedItems = [
             ...state.items,
-            { ...action.payload, quantity: action.payload.qty },
+            { ...action.payload, quantity: action.payload.quantity },
           ];
         }
 
         return {
           ...state,
-          totalItems: state.totalItems + action.payload.qty,
+          totalItems: state.totalItems + action.payload.quantity,
           totalPrice:
-            state.totalPrice + action.payload.qty * action.payload.price,
+            state.totalPrice + action.payload.quantity * action.payload.price,
           items: updatedItems,
         };
 
