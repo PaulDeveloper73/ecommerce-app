@@ -145,7 +145,7 @@ const Cart = () => {
             <div className="border"></div>
             <button
               type="button"
-              className="w-full py-3 text-lg text-white bg-indigo-500 border-none rounded-md shadow-md hover:bg-indigo-700 focus:outline-none hover:ring-1 hover:ring-offset-4 hover:ring-indigo-500"
+              className="w-full py-3 text-lg text-white bg-indigo-500 border-none rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none hover:ring-1 hover:ring-offset-4 hover:ring-indigo-500"
             >
               Proceed to checkout
             </button>
