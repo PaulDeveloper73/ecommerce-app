@@ -22,6 +22,7 @@ const RelatedProducts = ({ category }) => {
           <ProductCard key={product.id} product={product} />
         ))}
       </section>
+      <div className="mt-20"></div>
     </div>
   );
 };
