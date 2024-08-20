@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 const SignIn = () => {
   return (
-    <section id="contentarea" className="px-10 py-7 mt-12">
+    <section id="contentarea" className="px-10 mt-12 py-7">
       <div className="flex items-center justify-between">
         <a href="#" title="Flutter Login">
           E-Shop- N0:1 Online Supermarket
@@ -21,7 +21,7 @@ const SignIn = () => {
           id="loginform"
           className="flex flex-col space-y-6 sm:w-[370px] bg-white p-8 rounded-lg py-6"
         >
-          <h3 className="text-xl text-sky-700 mb-8 mt-2">
+          <h3 className="mt-2 mb-8 text-xl text-sky-700">
             Login to your account
           </h3>
           <div className="group">
@@ -32,7 +32,7 @@ const SignIn = () => {
               title="Email Address"
               placeholder="Email Address"
               required
-              className="w-full text-slate-600 font-light  placeholder:text-sm p-2 border border-gray-300 rounded outline-none ring-indigo-200 focus:ring-1"
+              className="w-full p-2 font-light border border-gray-300 rounded outline-none text-slate-600 placeholder:text-sm ring-indigo-200 focus:ring-1"
             />
             <p
               id="emailmsg"
@@ -48,7 +48,7 @@ const SignIn = () => {
               placeholder="Password"
               title="Password"
               required
-              className="w-full text-slate-600 font-light  placeholder:text-sm p-2 border border-gray-300 rounded outline-none ring-indigo-200 focus:ring-1"
+              className="w-full p-2 font-light border border-gray-300 rounded outline-none text-slate-600 placeholder:text-sm ring-indigo-200 focus:ring-1"
             />
             <p
               id="passmsg"
@@ -62,12 +62,12 @@ const SignIn = () => {
           >
             Login
           </button>
-          <div className="flex items-center justify-center space-x-3 divide-x divide-indigo-300 text-sm">
+          <div className="flex items-center justify-center space-x-3 text-sm divide-x divide-indigo-300">
             <Link to={"/recover-account"} title="Recover Account">
-              <p className="text-blue-600  text-sm">Forgot Password?</p>
+              <p className="text-sm text-blue-600">Forgot Password?</p>
             </Link>
             <Link to={"/sign-up"} title="Login" className="ps-2">
-              <p className="text-blue-600  text-sm">Sign-Up</p>
+              <p className="text-sm text-blue-600">Sign-Up</p>
             </Link>
           </div>
         </form>
