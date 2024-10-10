@@ -65,6 +65,12 @@ const ContactPerson = () => {
             <p className="text-slate-600 text-[13px] font-light text-balance">
               We know our products
             </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex,
+              magnam maxime voluptatibus officia possimus dolor molestiae
+              sapiente dolorum ad inventore voluptas, reprehenderit repellendus
+              error fuga, nostrum vitae asperiores architecto voluptate.
+            </p>
           </span>
         </div>
         <div className="flex items-center justify-start space-x-4">
