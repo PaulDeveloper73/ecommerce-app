@@ -69,7 +69,7 @@ const ContactPerson = () => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex,
               magnam maxime voluptatibus officia possimus dolor molestiae
               sapiente dolorum ad inventore voluptas, reprehenderit repellendus
-              error fuga, nostrum vitae asperiores architecto voluptate.
+              error fuga, nostrum vitae asperiores architecto voluptate.    
             </p>
           </span>
         </div>
