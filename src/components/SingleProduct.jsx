@@ -14,7 +14,7 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import ContactPerson from "./ContactPerson";
-import RelatedProducts from "../../RelatedProducts";
+import RelatedProducts from "./RelatedProducts";
 import { useState } from "react";
 import ProductDescription from "./product/ProductDescription";
 import ProductReviews from "./product/ProductReviews";
